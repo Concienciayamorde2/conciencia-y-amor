@@ -1,0 +1,843 @@
+/* Importación de fuentes oficiales del proyecto */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: min(var(--container-width), 90%);
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===================================================
+   1. CORRECCIÓN DE SECCIONES (SEPARACIÓN DE BLOQUES)
+   =================================================== */
+/* Evita que unas secciones se metan al lado de otras */
+.hero,
+.services-overview,
+.about-section,
+.events-testimonials-section,
+.cta-banner,
+.footer {
+    width: 100%;
+    clear: both;
+    display: block; /* Asegura que cada sección sea un bloque completo vertical */
+    box-sizing: border-box;
+}
+
+/* ===================================================
+   2. CORRECCIÓN DEL FOOTER (ANCHO Y LAYOUT HORIZONTAL)
+   =================================================== */
+/* El contenedor general abarca todo el ancho de la pantalla (100%) */
+.footer {
+    width: 100%;
+    padding: 4rem 1.5rem 2rem 1.5rem;
+}
+
+/* El contenido interno se centra con un máximo elegante */
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+/* Línea inferior del footer */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2.5rem auto 0 auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ===================================================
+   3. ESTILOS DEL LOGO DE NAVEGACIÓN (AJUSTADO A 80PX)
+   =================================================== */
+.navbar .logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1px !important;                 /* REDUCIDO: Acerca la llama grande directamente al texto */
+    text-decoration: none !important;
+}
+
+.navbar .logo img {
+    height: 80px !important;              /* Tamaño preferido para la llama */
+    width: auto !important;
+    display: block !important;
+    margin-right: -14px !important;
+}
+
+.navbar .logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.logo-top {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif) !important;
+    color: var(--primary-dark, #2D4030) !important;
+    font-size: 1.15rem !important;        /* SUBIÓ DE 0.95rem A 1.15rem para balancear la llama de 80px */
+    font-weight: 600 !important;
+    letter-spacing: 2.5px !important;     /* Un poco más de aire en las letras */
+    line-height: 1 !important;
+}
+
+.logo-bottom {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif) !important;
+    color: var(--primary-dark, #2D4030) !important;
+    font-size: 1.15rem !important;        /* SUBIÓ A 1.15rem */
+    font-weight: 600 !important;
+    letter-spacing: 2.5px !important;
+    line-height: 1 !important;
+}
+
+/* Ajuste especial para que el número "2" no se vea encogido */
+.logo-bottom span,
+.logo-bottom {
+    font-variant-numeric: lining-nums !important; /* Fuerza a que los números midan lo mismo que las mayúsculas */
+}
+
+.logo-middle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 3px 0 !important;
+}
+
+.logo-middle::before,
+.logo-middle::after {
+    content: '' !important;
+    flex: 1 !important;
+    height: 1px !important;
+    background-color: var(--gold, #C5A059) !important;
+    opacity: 0.8 !important;
+}
+
+.logo-y {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif) !important;
+    color: var(--gold, #C5A059) !important;
+    font-size: 0.85rem !important;       /* Subió a 0.85rem para estar en proporción */
+    font-weight: 500 !important;
+    padding: 0 8px !important;
+    line-height: 1 !important;
+}
+
+/* ==========================================
+   ESTILOS PARA EL MODAL POP-UP DE PAGOS
+   ========================================== */
+
+/* Ajuste de las insignias para que funcionen como botones interactivos */
+.pay-badge {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.pay-badge:hover {
+    transform: translateY(-2px);
+    background-color: var(--primary, #2D4A3E);
+    color: #FFFFFF;
+}
+
+/* Fondo oscuro / difuminado detrás del modal */
+.payment-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 74, 62, 0.6); /* Verde botánico con transparencia */
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Caja principal del pop-up */
+.payment-modal-content {
+    background-color: #FAF8F5;
+    padding: 30px 25px;
+    border-radius: 20px;
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--accent, #C5A059);
+    animation: fadeInModal 0.25s ease-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Botón de cerrar (X) */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 1.8rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: var(--primary, #2D4A3E);
+}
+
+#modalTitle {
+    color: var(--primary-dark, #2D4A3E);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+}
+
+.modal-subtitle {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Contenedor de la imagen QR */
+.qr-container {
+    background: #FFFFFF;
+    padding: 15px;
+    border-radius: 14px;
+    display: inline-block;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+}
+
+.qr-container img {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Caja de datos con botón Copiar */
+.copy-data-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.btn-copy {
+    background: var(--primary, #2D4A3E);
+    color: #FFF;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-copy:hover {
+    background: var(--accent, #C5A059);
+}
+
+.copy-success {
+    display: none;
+    font-size: 0.75rem;
+    color: var(--primary, #2D4A3E);
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   ESTILOS PREMIUM EXCLUSIVOS PARA EL FORMULARIO EMERGENTE
+   ========================================================== */
+
+/* Fondo oscuro con efecto cristal */
+#formModal.payment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(30, 35, 30, 0.55);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Tarjeta suave tipo crema */
+.booking-modal-content {
+    background: #FAF8F5;
+    max-width: 460px;
+    width: 100%;
+    padding: 40px 35px;
+    border-radius: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Alineación limpia de etiquetas */
+.booking-form .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.booking-form label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #4A5D50;
+    margin-bottom: 6px;
+}
+
+/* Embellecimiento de cajas de texto y menú desplegable */
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.92rem;
+    color: #2D3A30;
+    background: #FFFFFF;
+    border: 1.5px solid #DCE3DE;
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+/* Resaltado cuando haces clic en una casilla */
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #799A82;
+    box-shadow: 0 0 0 4px rgba(121, 154, 130, 0.15);
+}
+
+/* Botón redondeado y moderno */
+.booking-form .btn-full {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    background: #81A98B;
+    color: #FFFFFF;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(129, 169, 139, 0.35);
+}
+
+.booking-form .btn-full:hover {
+    background: #6A9274;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(129, 169, 139, 0.45);
+}
+
+/* ==========================================================
+   AJUSTES DE TIPOGRAFÍA Y ESPACIADO DEL ENCABEZADO
+   ========================================================== */
+
+/* Centra y le da separación a todo el encabezado */
+.booking-modal-header {
+    text-align: center;
+    margin-bottom: 28px; /* Crea el espacio necesario para despegarlo de "NOMBRE COMPLETO" */
+}
+
+/* Título más grande y refinado */
+.booking-modal-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; /* Aumenta el tamaño del título */
+    font-weight: 600;
+    color: #3E5343; /* Verde bosque elegante */
+    margin: 0 0 10px 0;
+    line-height: 1.1;
+}
+
+/* Párrafo descriptivo estilizado */
+.booking-modal-header p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #6B7C70;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 10px; /* Le da un ligero margen interno para que respire */
+}
+
+/* ==========================================
+   ELEVACIÓN VISUAL Y FONDO MÍSTICO / CÓSMICO
+   ========================================== */
+
+/* 1. Fondo general de las secciones de servicios */
+.services-category-section {
+    position: relative;
+    padding: 60px 20px 80px 20px;
+    background-color: #FAF8F5;
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(197, 160, 89, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(138, 155, 144, 0.08) 0%, transparent 50%);
+    overflow: hidden; /* Evita que las imágenes de otras secciones invadan esta */
+}
+
+/* 2. Marca de agua sutil de la flor de loto en el fondo (Solo para secciones normales, no para la de Geometría) */
+.services-category-section:not(.sacred-geo-bg)::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 320px;
+    height: 320px;
+    background: url('../assets/decor/lotos/loto.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 3. Realce de las tarjetas (Glow suave en Hover) */
+.service-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(197, 160, 89, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.15), 0 5px 15px rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(197, 160, 89, 0.5) !important;
+}
+
+/* 4. Resalte elegante para los títulos dorados de las tarjetas */
+.service-card h3 {
+    color: #4A3B32;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+    color: #C5A059;
+}
+
+/* 5. Posicionamiento de imágenes vectoriales en OTRAS secciones */
+.bg-vector-decor {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.40;
+}
+
+.bg-vector-decor img {
+    max-width: 320px;
+    height: auto;
+    filter: sepia(0.4) hue-rotate(10deg);
+}
+
+.bg-vector-decor.left-decor {
+    top: 20px;
+    left: 0px;
+}
+
+.bg-vector-decor.right-decor {
+    top: 30px;
+    right: -40px;
+}
+
+/* 6. REGLA DE SEGURIDAD: Ocultar cualquier vector que intente colarse en Adultos */
+#adultos .bg-vector-decor {
+    display: none !important;
+}
+/* ==========================================
+   AJUSTE DE BOTONES Y ELIMINACIÓN DE ESPACIO
+   ========================================== */
+
+/* 1. Separación horizontal clara entre los 3 botones */
+.category-pills,
+.services-pills,
+.pills-container {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 25px !important; /* Espacio entre los botones */
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+}
+
+/* 2. Reducir relleno inferior del bloque de arriba (Hero) */
+.page-hero {
+    padding-bottom: 5px !important;
+}
+
+/* 3. Subir de forma drástica la sección inferior para eliminar la franja blanca */
+.services-category-section,
+section#adultos,
+.services-overview {
+    padding-top: 0 !important;
+    margin-top: -25px !important; /* Margen negativo para subir y pegar la sección */
+}
+
+/* ==========================================
+   CENTRAR TITULOS Y CONTENIDO DE SECCIONES
+   ========================================== */
+
+/* Centra el contenedor general del encabezado de cada categoría */
+.services-category-section .category-header,
+.services-category-section .section-header,
+.category-header,
+.section-header {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* Centra los títulos h2 y h3 dentro de las secciones */
+.services-category-section h2,
+.services-category-section h3,
+.category-header h2,
+.section-header h2 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+/* Centra los párrafos descriptivos bajo el título */
+.services-category-section p,
+.category-header p,
+.section-header p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 700px !important; /* Limita el ancho del texto para que se lea mejor centrado */
+}
+/* ==========================================
+   CENTRAR Y OSCURECER SOLO ENCABEZADOS DE SECCIÓN
+   ========================================== */
+
+/* Centrar únicamente la cabecera del bloque (no las tarjetas) */
+.category-header,
+.section-header,
+.services-category-section > .category-header,
+.services-category-section > .section-header {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* Título principal de la sección (Ej: "Bienestar Holístico para Adultos") */
+.category-header h2,
+.section-header h2,
+.services-category-section > h2 {
+    text-align: center !important;
+    color: #2D4A3E !important; /* Verde bosque oscuro */
+    font-weight: 600 !important;
+    font-size: 2rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Subtítulo de la sección */
+.category-header p,
+.section-header p,
+.services-category-section > p {
+    text-align: center !important;
+    color: #4A5568 !important;
+    font-weight: 400 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 700px !important;
+}
+
+/* ==========================================
+   RESTAURAR TAMAÑO Y COLOR DE TARJETAS
+   ========================================== */
+
+.service-card h3 {
+    font-size: 1.35rem !important; /* Tamaño contenido y elegante */
+    color: #2D4A3E !important; /* Mantiene el color oscuro legible sin agrandarse */
+    font-weight: 500 !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+}
+
+.service-card p {
+    font-size: 0.9rem !important; /* Texto interno fino y compacto */
+    color: #5A6578 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+}
+/* ==========================================
+   REDUCIR ESPACIO ENTRE BLOQUES DE SERVICIOS
+   ========================================== */
+
+/* 1. Reducir relleno inferior de las secciones de categorías */
+.services-category-section,
+.services-overview {
+    padding-bottom: 25px !important; /* Disminuye la distancia bajo las tarjetas */
+    padding-top: 25px !important;    /* Disminuye la distancia sobre la flor de loto */
+}
+
+/* 2. Ajustar la grilla de tarjetas para que no empuje hacia abajo */
+.services-grid {
+    margin-bottom: 10px !important;
+}
+
+/* 3. Reducir los márgenes de la flor de loto entre secciones */
+.services-category-section .loto-divider,
+.section-header .loto-divider {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+/* ==========================================
+   ACOMODAR TARJETAS EN DENSIDAD 3 ARRIBA / 2 ABAJO CENTRADAS
+   ========================================== */
+
+/* Se aplica a la sección de Familias (o a cualquier grilla de 5 elementos) */
+#familias .services-grid,
+.services-category-section:last-of-type .services-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* Centra la segunda fila de 2 tarjetas */
+    gap: 25px !important;               /* Separación entre tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tamaño individual de las tarjetas para que entren exactamente 3 por fila */
+#familias .service-card,
+.services-category-section:last-of-type .service-card {
+    flex: 1 1 calc(33.333% - 25px) !important; /* Cada tarjeta ocupa 1/3 del ancho */
+    min-width: 280px !important;              /* Previene que se aplasten en pantallas medianas */
+    max-width: 360px !important;              /* Mantiene la proporción visual elegante */
+    box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   Unificación Estética de Ilustraciones Místicas
+   ( Círculos Grupales y Familias)
+   ========================================================================== */
+
+/* 1. Posicionamiento Global */
+.bg-vector-decor.decor-mujeres,
+.bg-vector-decor.decor-familias {
+    top: 2% !important;
+    z-index: 1 !important;
+}
+
+/* Reflejo horizontal en el lado izquierdo para lograr simetría */
+.bg-vector-decor.left-decor.decor-mujeres,
+.bg-vector-decor.left-decor.decor-familias {
+    left: 2% !important;
+    transform: scaleX(-1);
+}
+
+/* Alineación en el lado derecho */
+.bg-vector-decor.right-decor.decor-mujeres,
+.bg-vector-decor.right-decor.decor-familias {
+    right: 2% !important;
+}
+
+/* 2. Tratamiento de Tamaño (320px), Opacidad (0.65) y Filtro Etéreo Referencial */
+.bg-vector-decor.decor-mujeres img,
+.bg-vector-decor.decor-familias img {
+    max-width: 320px !important;
+    opacity: 0.65 !important; /* Opacidad delicada referencial */
+    filter: sepia(0.2) saturate(1.1) drop-shadow(0 6px 16px rgba(197, 160, 89, 0.15)) !important;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Corrección estricta de color sólido para NUESTROS SERVICIOS */
+.page-hero-content .page-title,
+h1.page-title {
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: #2D4A3E !important;
+    -webkit-text-fill-color: #2D4A3E !important;
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+/* Añade aire y espacio entre los botones superiores y la primera categoría (Adultos) */
+#adultos.services-category-section {
+    padding-top: 20px !important; /* Mueve todo el bloque hacia abajo, despegando la flor de loto de los botones */
+}
+
+/* Respiro extra para la flor de loto dentro de la cabecera de la sección */
+#adultos .section-header {
+    margin-top: 5px !important;
+}
+
+/* === ESTILOS PARA ÁNGELES SIMÉTRICOS SIN RECORTAR === */
+
+/* Asegura que el contenedor del héroe no corte nada que sobresalga */
+.page-hero {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: visible !important; /* IMPORTANTE: evita que el marco corte las alas */
+}
+
+/* Base para los contenedores simétricos de ángeles */
+.angel-decor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical perfecto */
+    z-index: 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* POSICIONES HORIZONTALES: Traemos los ángeles hacia adentro para que las alas se vean enteras */
+.decor-left {
+    left: 10px !important; /* En lugar de -20px, da espacio para que el ala izquierda salga completa */
+}
+
+.decor-right {
+    right: 10px !important; /* En lugar de -20px, da espacio para que el ala derecha salga completa */
+}
+
+/* ESTILO DE LA IMAGEN: TAMAÑO AJUSTADO Y COMPLETO */
+.angel-img-full {
+    max-height: 420px !important; /* Un poco más contenido para que quepa en el alto del Hero */
+    height: auto;
+    width: auto;
+    object-fit: contain !important; /* Garantiza que la imagen entera se renderice */
+    opacity: 0.92;
+}
+
+/* Reflejo horizontal exacto para el ángel derecho */
+.reflect-angel-horizontal {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+/* === RESPONSIVE: PANTALLAS GRANDES Y MEDIANAS === */
+/* Para monitores muy anchos (Full HD / 2K), podemos darles un poquito más de aire */
+@media (min-width: 1400px) {
+    .decor-left { left: 30px !important; }
+    .decor-right { right: 30px !important; }
+    .angel-img-full { max-height: 460px !important; }
+}
+
+@media (max-width: 1024px) {
+    .angel-img-full {
+        max-height: 300px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .angel-decor {
+        display: none !important;
+    }
+}
+
+/* === REGLA DEFINITIVA: GEOMETRÍA SAGRADA EN ADULTOS === */
+#adultos {
+    position: relative !important;
+}
+
+/* Creamos una capa dedicada exclusivamente a la textura */
+#adultos::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* Patrón vectorial directo de Flor de la Vida */
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232D4A3E' stroke-width='0.8'%3E%3Ccircle cx='40' cy='40' r='40'/%3E%3Ccircle cx='0' cy='40' r='40'/%3E%3Ccircle cx='80' cy='40' r='40'/%3E%3Ccircle cx='40' cy='0' r='40'/%3E%3Ccircle cx='40' cy='80' r='40'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: 130px 130px !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    
+    /* Opacidad suave (8% para elegancia sutil) */
+    opacity: 0.08 !important;
+    
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+/* Forzamos que el contenido y tarjetas estén por encima de la textura */
+#adultos .section-header,
+#adultos .services-grid {
+    position: relative !important;
+    z-index: 2 !important;
+}

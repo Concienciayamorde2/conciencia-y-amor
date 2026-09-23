@@ -1,0 +1,238 @@
+/* ==========================
+   HERO SECTION COMPACTA Y UNIFICADA
+========================== */
+section.hero, .hero {
+    display: grid !important;
+    grid-template-columns: 1fr 0.9fr !important;
+    align-items: center !important;
+    gap: 0 !important;                    /* Sin grieta en el medio */
+    max-width: 1100px !important;         /* Ancho equilibrado */
+    margin: 20px auto !important;
+    padding: 0 !important;                /* Eliminamos rellenos exteriores sobrantes */    
+    /* Contenedor único para ambas partes */
+    background: #F5F2EC !important;       /* Fondo crema/grisáceo suave unificado */
+    border-radius: 24px !important;       /* Borde suave general para toda la sección */
+    overflow: hidden !important;          /* Corta la imagen limpiamente en las esquinas derechas */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Columna de Texto: Se expande de arriba a abajo ocupando la altura total */
+.hero-text {
+    width: 100% !important;
+    height: 100% !important;             /* Toma el 100% del alto de la tarjeta */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* Distribuye arriba (badge), centro (título/texto) y abajo (botones) */
+    text-align: center !important;
+    padding: 50px 40px !important;        /* Más espacio arriba y abajo para respirar */
+    box-sizing: border-box !important;
+    background: transparent !important;
+}
+
+/* Etiqueta Superior (Badge) */
+.hero-tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    
+    /* Fondo blanco con degradado suave */
+    background: linear-gradient(135deg, #ffffff 0%, #f4f7f4 100%) !important;
+    
+    /* Borde verde orgánico fino */
+    border: 1px solid rgba(45, 74, 62, 0.2) !important;
+    
+    /* Texto verde bosque con espaciado elegante */
+    color: var(--primary-dark) !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    
+    /* Dimensiones y sombra de realce */
+    padding: 8px 22px !important;
+    border-radius: 50px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 4px 12px rgba(45, 74, 62, 0.06) !important;
+    
+    /* Transición suave para interactividad */
+    transition: all 0.3s ease !important;
+}
+
+.hero-tag:hover {
+    border-color: var(--gold, #C5A059) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 15px rgba(197, 160, 89, 0.2) !important;
+}
+
+/* Título Principal */
+.hero-title {
+    font-family: var(--font-heading) !important;
+    color: #2D4A3E !important;           /* Verde bosque oscuro para contraste y lectura clara */
+    font-size: 2.3rem !important;        /* Reducido de 3.8rem para que encaje perfecto en la tarjeta */
+    font-weight: 500 !important;
+    line-height: 1.05 !important;       /* Junta de forma elegante "RECONECTA" y "CONTIGO" */
+    letter-spacing: 1px !important;      /* Mantiene el toque de distinción */
+    margin: 0 0 12px 0 !important;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+    font-family: var(--font-body) !important;
+    color: #2D4A3E !important;           /* CAMBIO: Verde bosque para contraste óptimo */
+    font-size: 1.05rem !important;       /* Ajustado para mantener proporción con el nuevo título */
+    font-weight: 400 !important;
+    line-height: 1.35 !important;        /* Interlineado más recogido */
+    margin-bottom: 15px !important;
+}
+
+/* Divisor Decorativo */
+.hero-divider {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin: 8px 0 15px 0 !important;
+    width: 100% !important;
+}
+
+.hero-divider::before,
+.hero-divider::after {
+    content: '' !important;
+    height: 1px !important;
+    width: 45px !important;
+    background: linear-gradient(to right, transparent, var(--gold), transparent) !important;
+}
+
+.loto-icon {
+    font-size: 1.4rem !important;
+    color: var(--gold) !important;
+}
+
+/* Párrafo Descriptivo */
+.hero-description {
+    font-family: var(--font-body) !important;
+    color: var(--text) !important;
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+    max-width: 500px !important;
+    margin-bottom: 30px !important;
+}
+
+/* Botones de Acción */
+.hero-buttons {
+    display: flex !important;
+    gap: 15px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+
+/* Columna de Imagen (Pegada y acoplada limpiamente) */
+.hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #EAE6DF !important;
+    overflow: hidden !important;
+}
+
+.hero-shape {
+    display: none !important;
+}
+
+.hero-photo {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 700px !important;         /* AJUSTAS LA ALTURA*/
+    object-fit: cover !important;       /* Mantiene la foto 100% completa */
+    object-position: center top !important; /* Enfoca desde la parte superior (logo y rostro) */
+    display: block !important;
+    border-radius: 0 !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    box-shadow: none !important;
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 900px) {
+    section.hero, .hero {
+        grid-template-columns: 1fr !important;
+        margin: 10px !important;
+    }
+    
+    .hero-photo {
+        height: 380px !important;
+    }
+}
+
+/* ==========================================
+   COMPACTACIÓN EXACTA DE LA CABECERA (.page-hero)
+   ========================================== */
+
+/* 1. Reducir padding inferior de la franja crema superior */
+.page-hero {
+    padding-top: 30px !important;
+    padding-bottom: 10px !important; /* <--- Se redujo para quitar la franja vacía */
+    min-height: auto !important;
+    height: auto !important;
+}
+
+/* Espaciados del contenido interno */
+.page-hero-content {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Etiqueta superior (✨ Acompañamiento & Sanación) */
+.page-hero .hero-tag {
+    margin-bottom: 10px !important;
+    padding: 6px 16px !important;
+}
+
+/* Título principal (NUESTROS SERVICIOS) */
+.page-hero .page-title {
+    font-size: 2.2rem !important;
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Divisor de loto y texto descriptivo */
+.page-hero .loto-divider {
+    margin: 10px auto !important;
+}
+
+.page-hero p {
+    margin-bottom: 15px !important;
+    font-size: 0.95rem !important;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. SEPARAR LOS BOTONES HORIZONTALMENTE */
+.page-hero .category-pills,
+.category-pills {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important; /* <--- Agrega 20px de espacio libre entre botones */
+    margin-top: 15px !important;
+    margin-bottom: 0px !important;
+}
+
+/* Ajuste proporcional de las hojas laterales */
+.botanical-leaf img {
+    max-width: 180px !important;
+    height: auto;
+    opacity: 0.45 !important;
+}
+
+/* 3. SUBIR LA SECCIÓN INFERIOR PARA QUITAR EL ESPACIO BLANCO */
+.services-category-section,
+#adultos {
+    padding-top: 20px !important; /* Disminuye la distancia arriba de las tarjetas */
+    margin-top: 0 !important;
+}

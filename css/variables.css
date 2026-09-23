@@ -1,0 +1,59 @@
+:root {
+    /* Paleta de Colores Oficial (Ajustada para alto contraste) */
+    --primary: #8FB88B;         /* Verde Pistacho */
+    --primary-dark: #2D4A3E;    /* CAMBIO: Verde Bosque oscuro profundo para máxima legibilidad */
+    --background: #FBF8F2;      /* Fondo Crema suave */
+    --card-bg: #DDE7D4;         /* Verde claro tarjetas */
+    --card: #FFFFFF;            /* Blanco puro */
+    --gold: #C5A059;            /* Dorado acentos */
+    
+    /* Variables de Texto Uniformes */
+    --text: #2D4A3E;            /* CAMBIO: Todas las letras adoptan el verde oscuro */
+    --text-light: #2D4A3E;      /* CAMBIO: Mismo tono para eliminar grises lavados */
+    --white: #FFFFFF;
+    
+    /* ==========================
+       TIPOGRAFÍAS
+    ========================== */
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Bordes y Sombras */
+    --shadow: 0 10px 30px rgba(0,0,0,.04);
+    --shadow-hover: 0 18px 40px rgba(0,0,0,.08);
+    --radius: 18px;
+    --radius-btn: 30px;
+
+    /* ==========================
+       ESPACIADOS
+    ========================== */
+    --section-padding: 90px;
+    --container-width: 1200px;
+    --section-gap: 100px;
+
+    /* ==========================
+       TRANSICIONES
+    ========================== */
+    --transition: .35s ease;
+}
+
+/* ==========================================================================
+   REGLAS GLOBALES DE COLOR Y TIPOGRAFÍA (Index y Servicios)
+   ========================================================================== */
+body, html {
+    font-family: var(--font-body);
+    color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary-dark);
+}
+
+p, span, li, label, strong {
+    color: var(--text);
+}
+
+p {
+    opacity: 0.95; /* Asegura máxima nitidez en párrafos */
+}

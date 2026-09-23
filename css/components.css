@@ -1,0 +1,1385 @@
+/* ==========================
+   HERO / PORTADA (MARCA DE AGUA)
+========================== */
+.hero-text {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-bg-watermark {
+    position: absolute;
+    top: 50%;
+    left: -80px;
+    transform: translateY(-50%);
+    height: 110%;
+    width: auto;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: -1;
+    filter: sepia(20%) contrast(105%);
+}
+
+/* ==========================
+   NAVBAR (STICKY / FIJA)
+========================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: var(--bg-main, #FAF8F5); /* Fondo sólido para que no traslape texto al bajar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); /* Sombra suave cuando flota */
+    width: 100%;
+    overflow: visible; /* Mantiene los submenús visibles */
+    
+    /* PROPIEDADES CLAVE PARA DEJAR EL MENÚ FIJO */
+    position: sticky;
+    top: 0;
+    z-index: 10000; /* Lo mantiene por encima de fotos, cards y botones */
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    overflow: visible;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2D4A3E; /* CAMBIO: Verde bosque oscuro para contraste alto y elegante */
+    font-weight: 600; /* CAMBIO: Le da un toque levemente más definido */
+    font-size: 0.88rem; /* Ligero ajuste para mejor lectura */
+    letter-spacing: 0.5px;
+    transition: .3s;
+}
+
+nav a.active, nav a:hover {
+    color: var(--gold, #C5A059); /* Se mantiene el dorado místico */
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Ajuste para alinear imagen y texto en el menú */
+.nav-link-hotmart.flex-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-icon-img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+/* ==========================
+   DESPLEGABLE / DROPDOWN
+========================== */
+.dropdown {
+    position: relative;
+    padding-bottom: 15px; /* Puente invisible para que el mouse no pierda el hover */
+    margin-bottom: -15px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFFFFF;
+    min-width: 250px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    z-index: 9999;
+}
+
+/* Mostrar al pasar el mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(197, 160, 89, 0.12);
+    color: var(--gold);
+    padding-left: 25px; /* Efecto suave al pasar por cada opción */
+}
+
+/* ==========================
+   BOTONES
+========================== */
+.btn-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 12px 28px;
+    border-radius: var(--radius-btn);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-dark);
+    padding: 12px 28px;
+    border-radius: var(--radius-btn);
+    font-family: var(--font-body);
+    font-size: .80rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 2px solid var(--primary);
+    transition: var(--transition);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ==========================
+   SECCIÓN: SERVICIOS Y TARJETAS
+========================== */
+.services-overview {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+/* Grilla para ordenar las 3 tarjetas alineadas */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* Estilo individual de la tarjeta */
+.service-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(220, 227, 222, 0.6);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTENEDOR DE LA IMAGEN (Ajuste para ver la ilustración completa) */
+.card-image-container {
+    width: 100%;
+    height: 320px; /* Le da la altura suficiente a la tarjeta */
+    background-color: #FAF8F5; /* Fondo crema suave que combina con tus ilustraciones */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Muestra la imagen entera con su círculo sin cortar nada */
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Evita que la foto se corte o se estire */
+    display: block;
+}
+
+/* Contenido inferior (Título, texto y botón) */
+.card-content {
+    padding: 25px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+/* ==========================================
+   SEPARADOR: LOTO CON LÍNEAS LATERALES
+   ========================================== */
+
+/* 1. EL CONTENEDOR (Dibuja las líneas a los lados) */
+.loto-divider {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 350px !important; /* Ancho total del adorno */
+    margin: 20px auto !important;  /* Espacio arriba y abajo */
+}
+
+/* Línea izquierda */
+.loto-divider::before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold, #C5A059));
+}
+
+/* Línea derecha */
+.loto-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to left, transparent, var(--gold, #C5A059));
+}
+
+/* 2. LA FLOR (Punto exacto donde cambias el tamaño) */
+.loto-icon-img {
+    width: 100px !important;        /* <--- CAMBIA ESTE NÚMERO SI LA QUIERES MÁS GRANDE O PEQUEÑA */
+    height: auto !important;       /* Mantiene la proporción de la flor */
+    margin: 0 15px !important;     /* Espacio entre la flor y las líneas */
+    object-fit: contain !important;
+    display: block !important;
+    filter: brightness(0.65) contrast(1.2) !important;
+}
+
+/* GRID DE TARJETAS CORREGIDO */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptable a pantallas pequeñas */
+    gap: 30px;
+    align-items: stretch; /* Mantiene la misma altura en todas las tarjetas */
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Obliga a la tarjeta a llenar todo el alto disponible */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+}
+
+.card-badge-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 42px;
+    height: 42px;
+    background: var(--primary-dark);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card-content {
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Ocupa todo el espacio sobrante */
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 15px;
+    min-height: 55px; /* Empareja los títulos de 1 o 2 líneas */
+}
+
+.card-content p {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Empuja el botón al fondo de la tarjeta */
+}
+
+.btn-card {
+    background: var(--primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: var(--radius-btn);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s;
+    display: inline-block;
+    margin-top: auto; /* Alinea perfectamente todos los botones */
+}
+
+.btn-card:hover {
+    background: var(--primary-dark);
+}
+
+/* ==========================
+   SECCIÓN: SOBRE MÍ
+========================== */
+/* ==========================
+   SECCIÓN: SOBRE MÍ
+========================== */
+.about-section {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 60px 40px 30px 40px; /* Reducido de 100px a 30px abajo */
+    position: relative;
+}
+
+/* Fondo con patrón de Geometría Sagrada tenue */
+.about-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232D4A3E' stroke-width='0.8'%3E%3Ccircle cx='40' cy='40' r='40'/%3E%3Ccircle cx='0' cy='40' r='40'/%3E%3Ccircle cx='80' cy='40' r='40'/%3E%3Ccircle cx='40' cy='0' r='40'/%3E%3Ccircle cx='40' cy='80' r='40'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 130px 130px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2; /* Mantiene la foto y texto sobre la geometría */
+}
+
+.about-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* MARCO Y FOTO AJUSTADOS */
+.about-image-frame {
+    width: 100%;
+    max-width: 280px;          /* Ocupa el ancho adecuado de la columna */
+    height: 420px;             /* Altura estilizada en cápsula */
+    background: var(--card-bg);
+    border-radius: 140px;      /* Forma ovalada/arco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--gold);
+    overflow: hidden;          /* Recorta la foto respetando el borde */
+    box-shadow: var(--shadow);
+}
+
+/* NUEVA REGLA: Para la foto interna */
+.about-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <--- Ajusta la imagen manteniendo sus proporciones */
+    object-position: center; /* Centra la imagen dentro del marco */
+    display: block;
+}
+
+.sparkle-deco {
+    position: absolute;
+    color: var(--gold);
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+.sparkle-1 { top: 20px; left: -10px; }
+.sparkle-2 { bottom: 30px; right: -10px; }
+
+.about-content {
+    padding: 0 10px;
+}
+
+.about-content h2 {
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.btn-about {
+    margin-top: 15px;
+}
+
+.about-quote-card {
+    background: rgba(230, 223, 211, 0.45);
+    padding: 35px 25px;
+    border-radius: 120px 120px 20px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote-mark {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 0.8;
+    margin-bottom: 10px;
+}
+
+.about-quote-card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* ==========================
+   EVENTOS Y TESTIMONIOS
+========================== */
+.events-testimonials-section {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px 40px 80px 40px;
+}
+
+.events-testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start; /* Alinea las dos columnas en la parte superior */
+}
+
+.column-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.column-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--card);
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* CARCASA Y AJUSTE DE IMAGEN CORREGIDOS */
+.event-img-wrapper {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.event-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.event-info {
+    flex: 1; /* Permite que la información use todo el ancho disponible */
+}
+
+.event-info h3 {
+    font-size: 1.15rem;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+}
+
+.event-info p {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.event-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap; /* Evita que las etiquetas colapsen en pantallas reducidas */
+}
+
+.badge {
+    background: #F2EFE9;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    color: var(--text);
+}
+
+.link-more {
+    font-size: 0.72rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-full {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* --- SECCIÓN DE TESTIMONIOS Y SLIDER --- */
+
+.testimonials-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card {
+    background: #F5F1E8;
+    border-radius: var(--radius);
+    padding: 35px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.arrow-btn {
+    background: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.arrow-btn:hover {
+    background: var(--primary-dark);
+    color: white;
+    transform: scale(1.05);
+}
+
+.testimonial-content {
+    text-align: center;
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    min-height: 140px; /* Mantiene una altura fija para evitar saltos repentinos al cambiar de texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Oculta los testimonios que no están activos */
+.testimonial-item {
+    display: none;
+    width: 100%;
+}
+
+/* Muestra únicamente el testimonio activo */
+.testimonial-item.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.testimonial-item p {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-style: italic; /* <--- Esto activa la cursiva */
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: var(--gold); /* O el código hex de tu dorado como #C5A059 o #D4AF37 */
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.author {
+    font-size: 0.85rem;
+    color: var(--primary-dark);
+    display: block;
+}
+
+/* Efecto suave al cambiar de testimonio */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ==========================================
+   CTA BANNER & FOOTER (UNIFICADO Y OPTIMIZADO)
+   ========================================== */
+
+/* 1. SECCIÓN CTA BANNER */
+.cta-banner {
+    background: #E4EBE2; /* Tono verde menta suave y sólido */
+    text-align: center;
+    padding: 45px 20px;   /* Reducido de 60px a 45px para mejor proporción */
+    margin-top: 10px;     /* Reducido de 40px a 10px para eliminar el gran espacio superior */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Textura de Geometría Sagrada sobre el banner */
+.cta-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232D4A3E' stroke-width='0.8'%3E%3Ccircle cx='40' cy='40' r='40'/%3E%3Ccircle cx='0' cy='40' r='40'/%3E%3Ccircle cx='80' cy='40' r='40'/%3E%3Ccircle cx='40' cy='0' r='40'/%3E%3Ccircle cx='40' cy='80' r='40'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 110px 110px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.08; /* Suave y elegante */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Forzar que títulos, párrafos y botones floten sobre la textura */
+.cta-banner h2,
+.cta-banner p,
+.cta-banner .btn-cta {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-banner h2 {
+    font-size: 2.8rem;
+    color: #2D4A3E; /* Verde bosque oscuro para alta legibilidad */
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    font-size: 1rem;
+    color: #2D4A3E; /* Verde bosque oscuro para mejor contraste */
+    margin-bottom: 25px;
+}
+
+.btn-cta {
+    background: var(--card, #FFFFFF);
+    color: #2D4A3E;
+    border: 2px solid #2D4A3E;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-cta:hover {
+    background: #2D4A3E;
+    color: #FFFFFF;
+}
+
+/* 2. FOOTER CONTENEDOR Y GRID */
+.footer {
+    width: 100%;
+    background: #EDE8DF;
+    padding: 60px 20px 20px 20px;
+    color: #2D4A3E; /* CAMBIO: Verde bosque para contraste óptimo sobre beige */
+    box-sizing: border-box;
+}
+
+.footer-grid {
+    display: grid;
+    /* Anchos proporcionales para dar espacio al correo y evitar solapamiento */
+    grid-template-columns: 1.4fr 0.8fr 1.2fr 1.4fr 1.1fr;
+    gap: 25px;
+    max-width: 1250px;
+    margin: 0 auto 40px auto;
+    align-items: start; /* Alinea los títulos de las columnas al mismo nivel */
+}
+
+.footer-col {
+    min-width: 0; /* Permite que el texto largo no desborde ni tape la siguiente columna */
+}
+
+.footer-col h4 {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: #C5A059; /* CAMBIO: Dorado místico para resaltar los títulos de columna */
+    font-weight: 600;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul a {
+    text-decoration: none;
+    color: #2D4A3E; /* CAMBIO: Verde bosque oscuro para lectura impecable */
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul a:hover {
+    color: #C5A059; /* Hover dorado suave */
+}
+
+.footer-col p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    word-break: break-word; /* Rompe correos muy largos en pantallas estrechas */
+    margin-bottom: 10px;
+    color: #2D4A3E; /* CAMBIO: Verde bosque en párrafos y datos de contacto */
+}
+
+.footer-desc {
+    font-size: 0.82rem;
+    margin: 15px 0;
+    color: #2D4A3E; /* CAMBIO: Verde bosque para la descripción */
+}
+
+/* 3. LOGO Y MARCA EN FOOTER */
+.footer-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    text-decoration: none !important;
+    margin-bottom: 15px !important;
+}
+
+.footer-logo img {
+    height: 55px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    margin-right: -12px !important;
+}
+
+.footer-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: var(--font-heading, 'Cormorant Garamond', serif) !important;
+    color: var(--primary-dark, #2D4A3E) !important;
+    line-height: 0.85 !important;
+    letter-spacing: 1px !important;
+}
+
+.footer-brand-text .brand-top,
+.footer-brand-text .brand-bottom {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-variant-numeric: lining-nums !important;
+    margin: 0 !important;
+}
+
+.footer-brand-text .brand-middle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    font-size: 0.65rem !important;
+    font-weight: 500 !important;
+    color: var(--gold, #C5A059) !important;
+    letter-spacing: 1px !important;
+    margin: 3px 0 !important;
+}
+
+.footer-brand-text .brand-middle::before,
+.footer-brand-text .brand-middle::after {
+    content: '' !important;
+    height: 1px !important;
+    flex: 1 !important;
+    background-color: var(--gold, #C5A059) !important;
+    opacity: 0.8 !important;
+}
+
+.footer-brand-text .brand-bottom span {
+    font-variant-numeric: lining-nums !important;
+    font-size: 1rem !important;
+    display: inline-block !important;
+}
+
+/* 4. REDES SOCIALES */
+.social-icons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 10px !important;
+}
+
+.social-icons .social-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background-color: #FFFFFF !important;
+    color: var(--primary-dark, #2D4A3E) !important;
+    border: 1px solid rgba(45, 74, 62, 0.2) !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.social-icons .social-icon:hover {
+    background-color: var(--primary-dark, #2D4A3E) !important;
+    color: #FFFFFF !important;
+    border-color: var(--primary-dark, #2D4A3E) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 10px rgba(45, 74, 62, 0.15) !important;
+}
+
+/* 5. MEDIOS DE PAGO Y BOTÓN WHATSAPP */
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pay-badge {
+    background: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.btn-wsp-footer {
+    margin-top: 15px;
+    font-size: 0.75rem;
+}
+
+/* 6. PIE INFERIOR Y ENLACES LEGALES */
+.footer-bottom {
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.75rem;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.legal-links a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+/* 7. ADAPTABILIDAD RESPONSIVE (PANTALLAS PEQUEÑAS) */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+/* ==========================================
+   CONFIGURACIÓN GENERAL & ANCLAS
+   ========================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* ==========================================
+   CABECERA DE SERVICIOS (PAGE HERO BOTÁNICO)
+   ========================================== */
+
+.page-hero {
+    position: relative;
+    width: 100%;
+    padding: 90px 20px 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Evita desbordamientos en pantallas pequeñas */
+    background: radial-gradient(circle at center, #FAF8F5 0%, #EDE8DF 100%);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2; /* Texto por encima de las hojas botánicas */
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif);
+    font-size: 3.2rem;
+    color: var(--primary-dark, #2D4A3E);
+    margin: 15px 0 10px 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+.page-subtitle {
+    max-width: 600px;
+    margin: 15px auto 0 auto;
+    font-size: 1.05rem;
+    color: var(--text-muted, #666666);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* POSICIONAMIENTO DE LAS HOJAS BOTÁNICAS */
+.botanical-leaf {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.85;
+}
+
+.botanical-leaf img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(45, 74, 62, 0.05));
+}
+
+/* Rama izquierda */
+.leaf-left {
+    top: 10px;
+    left: 10px;
+    width: 220px;
+    transform: rotate(-10deg);
+}
+
+/* Rama derecha */
+.leaf-right {
+    bottom: 10px;
+    right: 10px;
+    width: 180px;
+    transform: rotate(20deg);
+}
+
+/* ==========================================
+   SECCIONES Y TARJETAS DE SERVICIOS
+   ========================================== */
+
+/* Secciones de categoría */
+.services-category-section {
+    padding: 60px 8%;
+    background-color: var(--bg-main, #FAF8F5);
+}
+
+.services-category-section.alt-bg {
+    background-color: var(--bg-card, #F4EFE6);
+}
+
+/* Grid de tarjetas */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjeta individual de servicio */
+.service-card {
+    background-color: #FFFFFF;
+    padding: 35px 25px 30px 25px;
+    border-radius: var(--radius, 16px);
+    border: 1px solid rgba(197, 160, 89, 0.2); /* Borde dorado suave */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Centra todo horizontalmente */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(45, 74, 62, 0.08);
+}
+
+/* Contenedor del ícono de Font Awesome */
+.service-icon-wrap {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon-wrap i {
+    font-size: 2.2rem;
+    color: var(--accent, #C5A059); /* Color dorado refinado */
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon-wrap i {
+    transform: scale(1.15); /* Efecto zoom suave al pasar el mouse */
+}
+
+/* Título de la tarjeta */
+.service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--primary, #2D4A3E);
+    margin-bottom: 12px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Barrita dorada alineada al centro */
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 2px;
+    background-color: var(--accent, #C5A059);
+}
+
+/* Descripción */
+.service-card p {
+    font-size: 0.92rem;
+    color: var(--text, #444444);
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Botón de la tarjeta */
+.btn-card {
+    background: var(--primary, #2D4A3E);
+    color: #FFFFFF !important;
+    padding: 10px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: auto;
+    min-width: 140px;
+    border: none;
+    box-shadow: 0 3px 10px rgba(45, 74, 62, 0.15);
+}
+
+.btn-card:hover {
+    background: var(--primary-dark, #1f352c);
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45, 74, 62, 0.25);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MÓVILES)
+   ========================================== */
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 60px 15px 40px 15px;
+    }
+    .leaf-left {
+        width: 130px;
+        left: -35px;
+        opacity: 0.4;
+    }
+    .leaf-right {
+        width: 110px;
+        right: -25px;
+        opacity: 0.4;
+    }
+}
+
+/* ==========================================
+   NUEVOS ESTILOS: SERVICIOS INTERACTIVOS
+   ========================================== */
+
+/* 1. BARRA DE NAVEGACIÓN POR CATEGORÍAS (PILLS) */
+.category-pills {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.pill-btn {
+    background-color: var(--card-bg, #FAF8F5);
+    color: var(--primary-dark, #4A3B32);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.pill-btn:hover, 
+.pill-btn.active {
+    background-color: var(--primary, #C5A059);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. ETIQUETA / BADGE SUPERIOR DE MODALIDAD */
+.service-card {
+    position: relative; /* Asegura la posición del badge flotante */
+}
+
+.service-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--primary-dark, #4A3B32);
+    padding: 4px 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+/* 3. TARJETA DESTACADA DEL PODCAST */
+.featured-podcast-card {
+    background: linear-gradient(135deg, #FAF8F5 0%, #F5EBE1 100%);
+    border: 1px solid rgba(197, 160, 89, 0.45); /* Un borde dorado algo más presente */
+    border-radius: var(--radius, 20px);
+    padding: 35px 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 10px 30px rgba(45, 74, 62, 0.08); /* Sombra suave verdosa */
+    text-align: center;
+}
+
+.service-badge-podcast {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: #EDE8DF;
+    color: #2D4A3E; /* Verde bosque */
+    border: 1px solid #C5A059; /* Borde dorado */
+    padding: 5px 16px;
+    border-radius: 15px;
+    letter-spacing: 0.5px;
+}
+
+.featured-podcast-card h3 {
+    font-size: 1.8rem !important; /* Ajustado para quedar en un nivel inferior respecto al encabezado principal */
+    color: #2D4A3E !important;    /* Verde bosque oscuro para excelente contraste */
+    font-weight: 600 !important;
+    margin: 12px 0 10px 0 !important;
+    line-height: 1.25 !important;
+}
+
+.featured-podcast-card p {
+    font-size: 0.95rem; /* Un punto más de escala */
+    color: #2D4A3E; /* CAMBIO: Verde bosque para alta legibilidad */
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+    opacity: 0.92;
+}
+
+.podcast-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-podcast-yt {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    padding: 10px 22px;
+    border-radius: var(--radius-btn, 25px);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-podcast-yt:hover {
+    background-color: #CC0000;
+    transform: translateY(-2px);
+}
+
+/* COMPACTAR ENCABEZADO PRINCIPAL DE SERVICIOS */
+.page-header, 
+.services-hero,
+header.services-overview {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    min-height: auto !important;
+}
+
+.page-header h1, 
+.services-hero h1,
+.services-overview h1 {
+    font-size: 2.2rem !important;
+    margin-top: 5px !important;
+    margin-bottom: 8px !important;
+    color: #2D4A3E !important; /* Tono oscuro elegante idéntico a las secciones de abajo */
+    opacity: 1 !important;
+}
+
+.page-header p,
+.services-hero p,
+.services-overview p {
+    margin-bottom: 12px !important;
+}

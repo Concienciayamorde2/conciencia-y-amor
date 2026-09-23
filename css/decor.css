@@ -1,0 +1,26 @@
+/* ==========================================
+   CONCIENCIA Y AMOR DE 2
+   SISTEMA DECORATIVO
+========================================== */
+
+/* Clase base */
+
+.decor{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:1;
+
+}
+
+.decor img{
+
+    display:block;
+
+    width:100%;
+
+}

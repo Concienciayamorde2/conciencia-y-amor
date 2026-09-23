@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciencia y Amor de 2</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Íconos oficiales para Redes Sociales) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Hojas de estilo CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/decor.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <img src="assets/logo/logo.png" alt="Logo Conciencia y Amor de 2">
+        <div class="logo-text">
+            <span class="logo-top">CONCIENCIA</span>
+            <div class="logo-middle">
+                <span class="logo-y">Y</span>
+            </div>
+            <span class="logo-bottom">AMOR DE 2</span>
+        </div>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li class="dropdown">
+                <a href="servicios.html">Servicios ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="servicios.html#adultos">Bienestar Holístico para Adultos</a></li>
+                    <li><a href="servicios.html#grupales">Círculos y Experiencias Grupales</a></li>
+                    <li><a href="servicios.html#familias">Acompañamiento Integral para Familias</a></li>
+                </ul>
+            </li>
+            
+            <!-- PESTAÑA HOTMART / RECURSOS -->
+            <li>
+                <a href="https://hotmart.com/es/club/stefany-escorcia/products/8386416?from=CustomizeHub" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="nav-link-hotmart">
+                     Recursos
+                </a>
+            </li>
+
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="nav-actions">
+        <a href="https://wa.me/573232938758" target="_blank" class="btn-primary">AGENDA TU SESIÓN</a>
+    </div>
+</header>
+
+   <!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-text">
+        <img src="assets/icons/mujer.png" alt="" class="hero-bg-watermark">
+        <span class="hero-tag">Bienestar · Conciencia · Amor</span>
+        <h1 class="hero-title">RECONECTA CONTIGO</h1>
+        <p class="hero-subtitle">
+            desde el amor, la conciencia<br>
+            y el autoconocimiento
+        </p>
+
+        <div class="loto-divider">
+            <img src="assets/decor/lotos/loto.png" alt="Flor de loto" class="loto-icon-img">
+        </div>
+
+        <p class="hero-description">
+            Un espacio de acompañamiento donde encontrarás herramientas para fortalecer tu bienestar emocional, cultivar tu crecimiento personal y conectar con una versión más consciente de ti.
+        </p>
+
+        <div class="nav-actions">
+    <!-- Reemplazas el enlace por este botón -->
+    <button type="button" class="btn-primary" onclick="openFormModal()">
+        📅 AGENDA TU SESIÓN
+    </button>
+            
+            <a href="servicios.html" class="btn-secondary">
+                CONOCE MIS SERVICIOS
+            </a>
+         </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-shape"></div>
+            <img src="assets/hero/hero.jpeg" class="hero-photo" alt="Conciencia y Amor de 2">
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CÓMO PUEDO ACOMPAÑARTE -->
+    <section class="services-overview">
+        <div class="section-header">
+            <div class="loto-divider">
+                <img src="assets/decor/lotos/loto.png" alt="Flor de loto" class="loto-icon-img">
+            </div>
+            <h2>Bienestar para cada etapa de tu vida</h2>
+            <p class="section-subtitle">Acompañamiento holístico para adultos, adolescentes y familias.</p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- TARJETA 1 -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <img src="assets/servicios/adulto.png" alt="Bienestar Holístico para Adultos" class="card-img">
+                </div>
+                    
+                <div class="card-content">
+                    <h3>Bienestar Holístico<br>para Adultos</h3>
+                    <p>Terapias holísticas orientadas al autoconocimiento, la sanación emocional y el crecimiento personal.</p>
+                    <a href="servicios.html#adultos" class="btn-card">
+                        DESCUBRIR TERAPIAS
+                    </a>
+                </div>
+            </article>
+
+            <!-- TARJETA 2 -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <img src="assets/servicios/circulo.png" alt="Círculos y Experiencias Grupales" class="card-img">                      
+                </div>
+                <div class="card-content">
+                    <h3>Círculos y Experiencias<br>Grupales</h3>
+                    <p>
+                        Encuentros para compartir, sanar y crecer mediante
+                        círculos de mujeres, talleres y experiencias grupales.
+                     </p>
+
+                    <a href="servicios.html#grupales" class="btn-card">
+                        VER EXPERIENCIAS
+                    </a>
+                </div>
+            </article>
+
+            <!-- TARJETA 3 -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <img src="assets/servicios/familia.png" alt="Acompañamiento Integral para Familias" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Acompañamiento Integral<br>para Familias</h3>
+                    <p>
+                        Espacios de acompañamiento para familias y adolescentes
+                        mediante herramientas terapéuticas y actividades de bienestar.
+                    </p>
+                    <a href="servicios.html#familias" class="btn-card">
+                        CONOCER EL PROGRAMA
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section> 
+
+    <!-- SECCIÓN: SOBRE MÍ -->
+    <section id="sobre-mi" class="about-section">
+        <div class="about-grid">
+            <!-- Columna Izquierda: Foto Ovalada/Circular -->
+            <div class="about-image-container">
+                <div class="about-image-frame">
+                    <img src="assets/about/foto-historia.jpeg" alt="Foto personal - Mi historia">
+                </div>
+                <span class="sparkle-deco sparkle-1">✦</span>
+                <span class="sparkle-deco sparkle-2">✦</span>
+            </div>
+
+            <!-- Columna Centro: Texto e Historia -->
+            <div class="about-content">
+                <div class="loto-divider">
+                <img src="assets/decor/lotos/loto.png" alt="Flor de loto" class="loto-icon-img">
+            </div>
+                <h2>Mi historia, mi camino</h2>
+                <p class="about-text">
+                Hubo un momento en mi vida en el que sentí que todo cambiaba. Una separación, el desafío de ser madre cabeza de hogar y muchas preguntas que no encontraba cómo responder.
+                Fue ese dolor el que me llevó a mirar hacia adentro. Descubrí que las heridas no son el final de la historia, sino el inicio de una transformación cuando nos atrevemos a escucharlas.
+                No llegué a este camino porque tuviera todas las respuestas. Llegué porque primero necesité encontrarlas para mí.
+        
+                </p>
+                <p class="about-text">
+                    Hoy acompaño a otras personas desde la empatía, el respeto y la experiencia de haber recorrido mi propio proceso. Creo profundamente que todos tenemos una luz esperando ser recordada y que, cuando comprendemos nuestro proceso y propósito se despierta.
+                </p>
+                <a href="https://wa.me/573232938758" target="_blank"
+                 class="btn-secondary btn-about">CONTACTAME</a>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta de Cita -->
+            <div class="about-quote-card">
+                <span class="quote-mark">“</span>
+                <p>Mi propósito no es cambiar tu historia, sino caminar contigo mientras descubres que siempre has tenido dentro de ti la fuerza para escribir un nuevo capítulo.</p>
+                <div class="loto-divider">
+                <img src="assets/decor/lotos/loto.png" alt="Flor de loto" class="loto-icon-img">
+            </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- SECCIÓN DOBLE: EVENTOS Y TESTIMONIOS -->
+    <section class="events-testimonials-section">
+        <div class="events-testimonials-grid">
+            
+            <!-- COLUMNA IZQUIERDA: EVENTOS -->
+            <div id="eventos" class="events-column">
+                <div class="column-header">
+                    <div class="loto-divider">
+                        <img src="assets/decor/lotos/loto.png" alt="Flor de loto" class="loto-icon-img">
+                    </div>
+                    <h2>PRÓXIMOS EVENTOS</h2>
+                </div>
+
+                <div class="events-list">
+                    <!-- EVENTO 1: CÍRCULO DE MUJERES -->
+                    <div class="event-card">
+                        <div class="event-img-wrapper">
+                            <img src="assets/servicios/circulo.png" alt="Círculo de Mujeres" class="event-img">
+                        </div>
+                        <div class="event-info">
+                            <h3>Círculo de Mujeres</h3>
+                            <p>Un espacio para abrirte, compartir y sanar juntas.</p>
+                            <div class="event-badges">
+                                <span class="badge">📅 2 veces al mes</span>
+                                <span class="badge">🎟️ Cupos limitados</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENTO 2: RETIROS DE SANACIÓN -->
+                    <div class="event-card">
+                        <div class="event-img-wrapper">
+                            <img src="assets/servicios/retiros.jpg" alt="Retiros de Sanación" class="event-img">
+                        </div>
+                        <div class="event-info">
+                            <h3>Retiros de Sanación</h3>
+                            <p>Encuentros profundos para tu transformación.</p>
+                            <div class="event-badges">
+                                <span class="badge">📅 Cada 3 meses</span>
+                                <a href="https://wa.me/573232938758?text=Hola,%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20Retiros%20de%20Sanaci%C3%B3n" 
+                                   class="link-more" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                   QUIERO MÁS INFORMACIÓN
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTÓN PRINCIPAL A WHATSAPP -->
+                <a href="https://wa.me/573232938758?text=Hola,%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20pr%C3%B3ximos%20eventos" 
+                   class="btn-secondary btn-full" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   CONSULTAR EVENTOS POR WHATSAPP
+                </a>
+            </div>
+
+            <!-- COLUMNA DERECHA: TESTIMONIOS -->
+            <div id="testimonios" class="testimonials-column">
+                <div class="column-header">
+                    <div class="loto-divider">
+                        <img src="assets/decor/lotos/loto.png" alt="Flor de loto" class="loto-icon-img">
+                    </div>
+                    <h2>TESTIMONIOS</h2>
+                </div>
+
+                <!-- TARJETA DEL SLIDER -->
+                <div class="testimonial-card">
+                    <button class="arrow-btn left" id="prevTestimonial" aria-label="Anterior">‹</button>
+                    
+                    <div class="testimonial-content">
+                        <!-- Testimonio 1 -->
+                        <div class="testimonial-item active">
+                            <p>“Mi experiencia con el tarot y las asesorías fue sumamente positiva. Gracias al acompañamiento de Stefany, logré ver las situaciones de mi vida desde una nueva perspectiva. Me permitió analizar mis metas y mis emociones a fondo.”</p>
+                            <div class="stars">★★★★★</div>
+                            <strong class="author">Leiny B.</strong>
+                        </div>
+
+                        <!-- Testimonio 2 -->
+                        <div class="testimonial-item">
+                            <p>“Siento que muchas piezas dentro de mí comenzaron a encontrar su lugar. El tarot no vino a decirme qué iba a pasar, sino a mostrarme lo que necesitaba sanar y fortalecer. Me dejó una profunda sensación de paz y claridad.”</p>
+                            <div class="stars">★★★★★</div>
+                            <strong class="author">Yenifer C.</strong>
+                        </div>
+
+                        <!-- Testimonio 3 -->
+                        <div class="testimonial-item">
+                            <p>“Después de mi lectura de Registros Akáshicos, sentí una profunda paz. Muchas respuestas que llevaba tiempo buscando ya habitaban en mi interior; solo necesitaba un espacio amoroso para escucharlas y soltar cargas.”</p>
+                            <div class="stars">★★★★★</div>
+                            <strong class="author">Andrea M.</strong>
+                        </div>
+
+                        <!-- Testimonio 4 -->
+                        <div class="testimonial-item">
+                            <p>“La Masterclass fue un antes y un después para mí. Comprendí que aquello que veía como sufrimiento era un llamado a regresar a mi esencia. Me ayudó a mirar mi proceso con amor, confianza y propósito.”</p>
+                            <div class="stars">★★★★★</div>
+                            <strong class="author">Carolina R.</strong>
+                        </div>
+
+                        <!-- Testimonio 5 -->
+                        <div class="testimonial-item">
+                            <p>“Encontré un profundo encuentro con mi alma y mi linaje. Pude mirar con amor lo que por tanto tiempo cargué, abriendo mi corazón al perdón. Cuando un alma sana, todo el sistema se transforma.”</p>
+                            <div class="stars">★★★★★</div>
+                            <strong class="author">Luz M.</strong>
+                        </div>
+                    </div>
+
+                    <button class="arrow-btn right" id="nextTestimonial" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- BANNER LLAMADO A LA ACCIÓN (CTA FINAL) -->
+    <section class="cta-banner">
+        <h2>¿Lista para iniciar tu proceso?</h2>
+        <p>Estoy aquí para acompañarte en tu camino de transformación y bienestar.</p>
+        <a href="https://wa.me/573232938758" target="_blank" class="btn-primary btn-cta">AGENDA TU SESIÓN AHORA</a>
+    </section>
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid">
+        
+        <!-- COLUMNA 1: LOGO + DESCRIPCIÓN + REDES -->
+        <div class="footer-col brand-col">
+            <a href="index.html" class="logo footer-logo">
+                <img src="assets/logo/logo.png" alt="Logo Conciencia y Amor de 2">
+                <div class="footer-brand-text">
+                    <span class="brand-top">CONCIENCIA</span>
+                    <span class="brand-middle">Y</span>
+                    <span class="brand-bottom">AMOR DE <span>2</span></span>
+                </div>
+            </a>
+            <p class="footer-desc">Guía y apertura emocional para reconectar contigo mismo y transformar tu vida.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/psic_oterapia11" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1GiS8AsYJh/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.tiktok.com/@psicoterapia.emocional11" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@psicoterapiaemocional" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.threads.net/@psic_oterapia11" target="_blank" rel="noopener noreferrer" aria-label="Threads" class="social-icon">
+                    <i class="fa-brands fa-threads"></i>
+                </a>
+            </div>
+        </div> 
+
+        <!-- COLUMNA 2: NAVEGACIÓN -->
+        <div class="footer-col">
+            <h4>NAVEGACIÓN</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="index.html#eventos">Eventos</a></li>
+                <li><a href="https://www.youtube.com/@psicoterapiaemocional" target="_blank" rel="noopener noreferrer">Podcast</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- COLUMNA 3: SERVICIOS -->
+        <div class="footer-col">
+            <h4>SERVICIOS</h4>
+            <ul>
+                <li><a href="servicios.html#adultos">Bienestar Holístico para Adultos</a></li>
+                <li><a href="servicios.html#grupales">Círculos y Experiencias Grupales</a></li>
+                <li><a href="servicios.html#familias">Acompañamiento Integral para Familias</a></li>
+                <li><a href="contacto.html">Agenda tu Sesión</a></li>
+            </ul>
+        </div>
+
+        <!-- COLUMNA 4: CONTACTO -->
+        <div class="footer-col" id="contacto">
+            <h4>CONTACTO</h4>
+            <p>📞 +57 323 293 8758</p>
+            <p>✉️ sthefany.vozdelumbral@gmail.com</p>
+            <p>📍 Atención presencial y virtual</p>
+            <a href="contacto.html" class="btn-primary btn-wsp-footer">AGENDA TU SESIÓN</a>
+        </div>
+
+        <!-- COLUMNA 5: MEDIOS DE PAGO -->
+        <div class="footer-col payments-col">
+            <h4>MEDIOS DE PAGO</h4>
+            <div class="payment-methods">
+                <button type="button" class="pay-badge" onclick="openPaymentModal('Nequi', 'assets/pagos/qr-nequi.jpeg', '323 299 1657')">Nequi</button>
+                <button type="button" class="pay-badge" onclick="openPaymentModal('Bre-B', 'assets/pagos/qr-bancolombia.jpeg', '@psicoterapiaemoc')">Bre-B</button>
+                <button type="button" class="pay-badge" onclick="openPaymentModal('PayPal', 'assets/pagos/qr-paypal.jpeg', 'sthefany1220escorcia@gmail.com')">PayPal</button>
+                <button type="button" class="pay-badge" onclick="openPaymentModal('BBVA', 'assets/pagos/qr-bbva.jpeg', 'Ahorros: 0902012181')">BBVA</button>
+                <button type="button" class="pay-badge" onclick="openPaymentModal('Bancolombia', 'assets/pagos/qr-bancolombia.jpeg', 'Ahorros: 912830356-50')">Bancolombia</button>
+            </div>
+        </div>
+
+    </div> <!-- Cierre de footer-grid -->
+
+    <!-- ESTRUCTURA DEL POP-UP (MODAL DE PAGOS) -->
+    <div id="paymentModal" class="payment-modal" onclick="closePaymentModal(event)">
+        <div class="payment-modal-content">
+            <span class="close-modal" onclick="closePaymentModalForce()">&times;</span>
+            <h3 id="modalTitle">Medio de Pago</h3>
+            <p class="modal-subtitle">Escanea el código QR o copia los datos de pago</p>
+            
+            <div class="qr-container">
+                <img id="modalQrImg" src="" alt="Código QR de Pago">
+            </div>
+
+            <div class="copy-data-box">
+                <span id="modalDataText">323 293 8758</span>
+                <button type="button" class="btn-copy" onclick="copyPaymentData()">
+                    <i class="fa-regular fa-copy"></i> Copiar
+                </button>
+            </div>
+            <span id="copySuccessMsg" class="copy-success">¡Copiado al portapapeles!</span>
+        </div>
+    </div>
+
+    <!-- POP-UP / MODAL DE AGENDAMIENTO REFINADO -->
+<div id="formModal" class="payment-modal" onclick="closeFormModalOverlay(event)" style="display:none;">
+    <div class="booking-modal-content">
+        <span class="close-modal" onclick="closeFormModal()">&times;</span>
+        
+        <div class="booking-modal-header">
+            <h3>Agenda tu Sesión</h3>
+            <p>Déjanos tus datos para coordinar tu espacio de acompañamiento.</p>
+        </div>
+
+        <form action="https://formspree.io/f/mrpgoqoa" method="POST" class="booking-form">
+            <div class="form-group">
+                <label for="modal-nombre">Nombre Completo</label>
+                <div class="input-icon-wrapper">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="modal-nombre" name="nombre" required placeholder="Tu nombre y apellido">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="modal-email">Correo Electrónico</label>
+                <div class="input-icon-wrapper">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="modal-email" name="_replyto" required placeholder="tucorreo@ejemplo.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="modal-telefono">WhatsApp / Teléfono</label>
+                <div class="input-icon-wrapper">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <input type="tel" id="modal-telefono" name="telefono" required placeholder="+57 300 000 0000">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="modal-servicio">Servicio de Interés</label>
+                <div class="input-icon-wrapper">
+                    <i class="fa-regular fa-star"></i>
+                    <select id="modal-servicio" name="servicio" required>
+                        <option value="" disabled selected>Selecciona un servicio</option>
+                        <option value="Bienestar Holístico para Adultos">Bienestar Holístico para Adultos</option>
+                        <option value="Círculos y Experiencias Grupales">Círculos y Experiencias Grupales</option>
+                        <option value="Acompañamiento Integral para Familias">Acompañamiento Integral para Familias</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">CONFIRMAR Y AGENDAR</button>
+        </form>
+    </div>
+</div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Conciencia y Amor de 2. Todos los derechos reservados.</p>
+        <div class="legal-links">
+            <a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a>
+        </div>
+    </div>
+</footer>
+
+    <!-- SCRIPTS DE LA PÁGINA -->
+    <script>
+    /* 1. FUNCIONES PARA EL MODAL POP-UP DE MEDIOS DE PAGO */
+    function openPaymentModal(title, qrSrc, dataText) {
+        var modal = document.getElementById('paymentModal');
+        var titleElem = document.getElementById('modalTitle');
+        var imgElem = document.getElementById('modalQrImg');
+        var textElem = document.getElementById('modalDataText');
+        var msgElem = document.getElementById('copySuccessMsg');
+
+        if (modal && titleElem && imgElem && textElem) {
+            titleElem.innerText = title;
+            imgElem.src = qrSrc;
+            textElem.innerText = dataText;
+            modal.style.display = 'flex';
+            if (msgElem) msgElem.style.display = 'none';
+        }
+    }
+
+    function closePaymentModal(event) {
+        if (event.target.id === 'paymentModal') {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+    }
+
+    function closePaymentModalForce() {
+        document.getElementById('paymentModal').style.display = 'none';
+    }
+
+    function copyPaymentData() {
+        var textToCopy = document.getElementById('modalDataText').innerText;
+        navigator.clipboard.writeText(textToCopy).then(function() {
+            var msg = document.getElementById('copySuccessMsg');
+            if (msg) {
+                msg.style.display = 'block';
+                setTimeout(function() {
+                    msg.style.display = 'none';
+                }, 2500);
+            }
+        });
+    }
+
+    /* 2. FUNCIONES PARA EL MODAL POP-UP DE AGENDAMIENTO (FORMSPREE) */
+    function openFormModal() {
+        document.getElementById('formModal').style.display = 'flex';
+    }
+
+    function closeFormModal() {
+        document.getElementById('formModal').style.display = 'none';
+    }
+
+    function closeFormModalOverlay(event) {
+        if (event.target.id === 'formModal') {
+            closeFormModal();
+        }
+    }
+
+    /* 3. CARRUSEL DE TESTIMONIOS */
+    document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".testimonial-item");
+        const prevBtn = document.getElementById("prevTestimonial");
+        const nextBtn = document.getElementById("nextTestimonial");
+        let currentIndex = 0;
+
+        function showTestimonial(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle("active", i === index);
+            });
+        }
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showTestimonial(currentIndex);
+            });
+
+            nextBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                showTestimonial(currentIndex);
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>
