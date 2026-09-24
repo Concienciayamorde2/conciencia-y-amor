@@ -58,7 +58,7 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   RESTRUCTURACIÓN RESPONSIVA Y VISIBILIDAD DE IMÁGENES
+   RESTRUCTURACIÓN RESPONSIVA EXCLUSIVA PARA MÓVIL
    ========================================== */
 @media screen and (max-width: 768px) {
 
@@ -106,7 +106,7 @@ p {
     display: block !important;
   }
 
-  /* 3. Reorganizar Secciones y Grids a una sola columna */
+  /* 3. Reorganizar Secciones a una sola columna */
   .grid, .row, .container, .hero, .hero-section, 
   .about-section, .events-testimonials-container,
   .service-card, .service-item,
@@ -137,37 +137,32 @@ p {
     margin: 10px 0 !important;
   }
 
-  /* 5. VISIBILIDAD DE TODAS LAS IMÁGENES (Servicios e Ilustraciones generales) */
+  /* 5. Imágenes generales de Servicios */
   img, 
   .about-img, 
   .profile-img, 
   .service-img, 
   .hero-img, 
-  .angel-img,
   [class*="img"] {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     max-width: 100% !important;
-    width: auto !important;
     height: auto !important;
     margin: 15px auto !important;
     object-fit: contain !important;
   }
 
-  /* 6. REGLAS ESPECÍFICAS PARA LOS ÁNGELES (servicios.html) */
+  /* 6. MANEJO EXCLUSIVO DE ÁNGELES EN MÓVIL */
   .page-hero {
     position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    overflow: visible !important;
   }
 
-  /* Desposicionar absolutos para integrarlos al flujo normal */
-  .angel-decor, .decor-left, .decor-right,
-  .angel, .angeles, .decorative-img, .floating-img, 
-  [class*="angel"], [id*="angel"] {
+  /* Ángel Izquierdo centrado únicamente en móvil */
+  .decor-left {
     position: relative !important;
     top: auto !important;
     left: auto !important;
@@ -176,30 +171,27 @@ p {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    margin: 15px auto !important;
-    width: 100% !important;
+    margin: 10px auto !important;
+    width: auto !important;
     text-align: center !important;
   }
 
-  /* Ocultar el ángel derecho en móvil para que solo se vea uno centrado */
-  .decor-right {
-    display: none !important;
-  }
-
-  /* Tamaño controlado para la imagen del ángel en pantalla móvil */
-  .angel-img-full {
+  .decor-left .angel-img-full {
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-width: 110px !important;
+    max-width: 90px !important;
     height: auto !important;
     margin: 0 auto !important;
   }
 
-  /* 7. Arreglo para tarjetas de Eventos y Testimonios */
+  /* Ocultar únicamente el segundo ángel en celular para no saturar */
+  .decor-right {
+    display: none !important;
+  }
+
+  /* 7. Tarjetas de Eventos y Testimonios */
   .events-section, .testimonials-section, .card, .event-card {
     width: 100% !important;
     margin-bottom: 20px !important;
   }
 
-} /* <-- CIERRE DE LA REGLA MEDIA SCREEN */
+} /* CIERRE ESTRICTO DE LA REGLA MEDIA */
