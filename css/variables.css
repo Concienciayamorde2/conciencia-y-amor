@@ -58,73 +58,96 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   AJUSTES RESPONSIVOS PARA MÓVILES (MENOS DE 768px)
+   RESTRUCTURACIÓN RESPONSIVA TOTAL (MÓVILES)
    ========================================== */
 @media screen and (max-width: 768px) {
 
-  /* 1. Prevenir desplazamiento horizontal no deseado */
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  /* 2. Reorganizar la cabecera (Logo y Menú) */
-  header, nav, .navbar, .nav-container {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 10px !important;
-    width: 100% !important;
+  /* 1. Reset general y contención de pantalla */
+  *, *::before, *::after {
     box-sizing: border-box !important;
   }
 
-  /* 3. Ajustar el tamaño e imagen del logo */
-  .logo, header img {
-    max-width: 120px !important;
-    height: auto !important;
-    margin-bottom: 8px !important;
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 4. Menú de navegación en lista limpia horizontal/vertical */
+  /* 2. Arreglo del Menú de Navegación */
+  header, nav, .navbar, .nav-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 10px 5px !important;
+    position: relative !important;
+  }
+
   nav ul, .nav-links {
     display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    padding: 0 !important;
-    margin: 5px 0 !important;
+    flex-direction: column !important; /* Enlace tras enlace verticalmente */
+    align-items: center !important;
     width: 100% !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
   }
 
-  nav ul li, .nav-links a {
-    font-size: 0.9rem !important;
+  nav ul li {
+    width: 100% !important;
+    text-align: center !important;
   }
 
-  /* 5. Apilar la sección principal (Hero) de 2 columnas a 1 columna */
-  .hero, .hero-section, .hero-container, main section {
+  /* Ocultar desplegables complejos en móvil para no romper la pantalla */
+  .dropdown-menu, nav ul li ul {
+    position: static !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* 3. Desmontar CSS Grids y Flexbox de 2 columnas */
+  .grid, .row, .container, .hero, .hero-section, 
+  .about-section, .events-testimonials-container,
+  [class*="grid"], [class*="col-"] {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 15px !important;
     width: 100% !important;
-    box-sizing: border-box !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
-  /* 6. Hacer que las imágenes se adapten al ancho móvil */
-  .hero img, .about-img, section img {
+  /* 4. Arreglo específico para "Mi historia, mi camino" y Textos encimados */
+  h1, h2, .title, .heading {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+
+  .about-content, .bio-text, blockquote {
+    width: 100% !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin: 10px 0 !important;
+  }
+
+  /* 5. Fuerza a que la Foto de "Sobre Mí" y demás imágenes aparezcan y se centren */
+  .about-img, .profile-img, img {
+    display: block !important;
     max-width: 100% !important;
     height: auto !important;
-    margin-top: 15px !important;
-    border-radius: 12px;
+    margin: 15px auto !important;
   }
 
-  /* 7. Ajustar botones para que no se salgan de pantalla */
-  .btn, button, a.button {
-    width: 90% !important;
-    max-width: 300px !important;
-    margin: 8px auto !important;
-    display: inline-block !important;
-    box-sizing: border-box !important;
+  /* 6. Arreglo para Eventos y Testimonios (Apilados verticalmente) */
+  .events-section, .testimonials-section, .card, .event-card {
+    width: 100% !important;
+    margin-bottom: 20px !important;
   }
 }
