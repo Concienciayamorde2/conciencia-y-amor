@@ -58,30 +58,50 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   RESTRUCTURACIÓN RESPONSIVA EXCLUSIVA PARA MÓVIL
+   RESTAURACIÓN PERFECTA EN ESCRITORIO (PC)
+   ========================================== */
+@media screen and (min-width: 769px) {
+  .page-hero .angel-decor.decor-left {
+    position: absolute !important;
+    left: 40px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .page-hero .angel-decor.decor-right {
+    position: absolute !important;
+    right: 40px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .angel-img-full {
+    display: inline-block !important;
+    max-width: 160px !important;
+    height: auto !important;
+  }
+}
+
+/* ==========================================
+   AJUSTE RESPONSIVO EXCLUSIVO PARA MÓVIL (<= 768px)
    ========================================== */
 @media screen and (max-width: 768px) {
-
-  /* 1. Reset general y contención de pantalla */
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-  }
 
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
-  /* 2. Arreglo del Menú de Navegación */
+  /* Menú de navegación en columna */
   header, nav, .navbar, .nav-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
-    padding: 10px 5px !important;
-    position: relative !important;
   }
 
   nav ul, .nav-links {
@@ -91,107 +111,47 @@ p {
     width: 100% !important;
     gap: 8px !important;
     padding: 0 !important;
-    margin: 10px 0 !important;
   }
 
-  nav ul li {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  .dropdown-menu, nav ul li ul {
-    position: static !important;
-    box-shadow: none !important;
-    width: 100% !important;
-    display: block !important;
-  }
-
-  /* 3. Reorganizar Secciones a una sola columna */
+  /* Redimensionamiento de contenedores */
   .grid, .row, .container, .hero, .hero-section, 
-  .about-section, .events-testimonials-container,
-  .service-card, .service-item,
-  [class*="grid"], [class*="col-"] {
+  .about-section, .service-card, .service-item {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     max-width: 100% !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 
-  /* 4. Títulos y Textos adaptados */
-  h1, h2, .title, .heading {
-    font-size: 1.8rem !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-    word-break: normal !important;
-    white-space: normal !important;
-  }
-
-  .about-content, .bio-text, blockquote {
-    width: 100% !important;
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-    margin: 10px 0 !important;
-  }
-
-  /* 5. Imágenes generales de Servicios */
-  img, 
-  .about-img, 
-  .profile-img, 
-  .service-img, 
-  .hero-img, 
-  [class*="img"] {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 15px auto !important;
-    object-fit: contain !important;
-  }
-
-  /* 6. MANEJO EXCLUSIVO DE ÁNGELES EN MÓVIL */
+  /* --- MOSTRAR UN ÁNGEL CENTRADO EN CELULAR --- */
   .page-hero {
-    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
   }
 
-  /* Ángel Izquierdo centrado únicamente en móvil */
-  .decor-left {
+  .angel-decor.decor-left {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
     margin: 10px auto !important;
-    width: auto !important;
     text-align: center !important;
+    order: -1 !important; /* Lo coloca arriba del título */
   }
 
-  .decor-left .angel-img-full {
+  .angel-decor.decor-left .angel-img-full {
     display: block !important;
     max-width: 90px !important;
     height: auto !important;
     margin: 0 auto !important;
   }
 
-  /* Ocultar únicamente el segundo ángel en celular para no saturar */
-  .decor-right {
+  /* Oculta únicamente el segundo ángel para no recargar la pantalla */
+  .angel-decor.decor-right {
     display: none !important;
   }
-
-  /* 7. Tarjetas de Eventos y Testimonios */
-  .events-section, .testimonials-section, .card, .event-card {
-    width: 100% !important;
-    margin-bottom: 20px !important;
-  }
-
-} /* CIERRE ESTRICTO DE LA REGLA MEDIA */
+}
