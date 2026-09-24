@@ -57,3 +57,74 @@ p, span, li, label, strong {
 p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
+/* ==========================================
+   AJUSTES RESPONSIVOS PARA MÓVILES (MENOS DE 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+
+  /* 1. Prevenir desplazamiento horizontal no deseado */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* 2. Reorganizar la cabecera (Logo y Menú) */
+  header, nav, .navbar, .nav-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Ajustar el tamaño e imagen del logo */
+  .logo, header img {
+    max-width: 120px !important;
+    height: auto !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* 4. Menú de navegación en lista limpia horizontal/vertical */
+  nav ul, .nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    margin: 5px 0 !important;
+    width: 100% !important;
+  }
+
+  nav ul li, .nav-links a {
+    font-size: 0.9rem !important;
+  }
+
+  /* 5. Apilar la sección principal (Hero) de 2 columnas a 1 columna */
+  .hero, .hero-section, .hero-container, main section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 6. Hacer que las imágenes se adapten al ancho móvil */
+  .hero img, .about-img, section img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin-top: 15px !important;
+    border-radius: 12px;
+  }
+
+  /* 7. Ajustar botones para que no se salgan de pantalla */
+  .btn, button, a.button {
+    width: 90% !important;
+    max-width: 300px !important;
+    margin: 8px auto !important;
+    display: inline-block !important;
+    box-sizing: border-box !important;
+  }
+}
