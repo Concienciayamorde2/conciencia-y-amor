@@ -161,3 +161,17 @@ p {
     margin-bottom: 20px !important;
   }
 }
+/* Forzar visibilidad de decoraciones, vectores y elementos flotantes */
+.angel, .angeles, .decorative-img, .floating-img, 
+[class*="angel"], [id*="angel"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important; /* Para que entren en la secuencia normal de la página */
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  margin: 20px auto !important;
+  max-width: 80% !important;
+  height: auto !important;
+}
