@@ -58,7 +58,7 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   RESTRUCTURACIÓN RESPONSIVA TOTAL (MÓVILES)
+   RESTRUCTURACIÓN RESPONSIVA Y VISIBILIDAD DE IMÁGENES
    ========================================== */
 @media screen and (max-width: 768px) {
 
@@ -86,7 +86,7 @@ p {
 
   nav ul, .nav-links {
     display: flex !important;
-    flex-direction: column !important; /* Enlace tras enlace verticalmente */
+    flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
     gap: 8px !important;
@@ -99,7 +99,6 @@ p {
     text-align: center !important;
   }
 
-  /* Ocultar desplegables complejos en móvil para no romper la pantalla */
   .dropdown-menu, nav ul li ul {
     position: static !important;
     box-shadow: none !important;
@@ -107,9 +106,10 @@ p {
     display: block !important;
   }
 
-  /* 3. Desmontar CSS Grids y Flexbox de 2 columnas */
+  /* 3. Reorganizar Secciones y Grids a una sola columna */
   .grid, .row, .container, .hero, .hero-section, 
   .about-section, .events-testimonials-container,
+  .service-card, .service-item,
   [class*="grid"], [class*="col-"] {
     display: flex !important;
     flex-direction: column !important;
@@ -121,7 +121,7 @@ p {
     margin-right: 0 !important;
   }
 
-  /* 4. Arreglo específico para "Mi historia, mi camino" y Textos encimados */
+  /* 4. Títulos y Textos adaptados */
   h1, h2, .title, .heading {
     font-size: 1.8rem !important;
     line-height: 1.3 !important;
@@ -137,15 +137,25 @@ p {
     margin: 10px 0 !important;
   }
 
-  /* 5. Fuerza a que la Foto de "Sobre Mí" y demás imágenes aparezcan y se centren */
-  .about-img, .profile-img, img {
+  /* 5. VISIBILIDAD DE TODAS LAS IMÁGENES (Ángeles, Servicios e Ilustraciones) */
+  img, 
+  .about-img, 
+  .profile-img, 
+  .service-img, 
+  .hero-img, 
+  .angel-img,
+  [class*="img"] {
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     max-width: 100% !important;
+    width: auto !important;
     height: auto !important;
     margin: 15px auto !important;
+    object-fit: contain !important;
   }
 
-  /* 6. Arreglo para Eventos y Testimonios (Apilados verticalmente) */
+  /* 6. Arreglo para tarjetas de Eventos y Testimonios */
   .events-section, .testimonials-section, .card, .event-card {
     width: 100% !important;
     margin-bottom: 20px !important;
