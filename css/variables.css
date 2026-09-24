@@ -137,7 +137,7 @@ p {
     margin: 10px 0 !important;
   }
 
-  /* 5. VISIBILIDAD DE TODAS LAS IMÁGENES (Ángeles, Servicios e Ilustraciones) */
+  /* 5. VISIBILIDAD DE TODAS LAS IMÁGENES (Servicios e Ilustraciones generales) */
   img, 
   .about-img, 
   .profile-img, 
@@ -155,23 +155,51 @@ p {
     object-fit: contain !important;
   }
 
-  /* 6. Arreglo para tarjetas de Eventos y Testimonios */
+  /* 6. REGLAS ESPECÍFICAS PARA LOS ÁNGELES (servicios.html) */
+  .page-hero {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    overflow: visible !important;
+  }
+
+  /* Desposicionar absolutos para integrarlos al flujo normal */
+  .angel-decor, .decor-left, .decor-right,
+  .angel, .angeles, .decorative-img, .floating-img, 
+  [class*="angel"], [id*="angel"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 15px auto !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Ocultar el ángel derecho en móvil para que solo se vea uno centrado */
+  .decor-right {
+    display: none !important;
+  }
+
+  /* Tamaño controlado para la imagen del ángel en pantalla móvil */
+  .angel-img-full {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 110px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* 7. Arreglo para tarjetas de Eventos y Testimonios */
   .events-section, .testimonials-section, .card, .event-card {
     width: 100% !important;
     margin-bottom: 20px !important;
   }
-}
-/* Forzar visibilidad de decoraciones, vectores y elementos flotantes */
-.angel, .angeles, .decorative-img, .floating-img, 
-[class*="angel"], [id*="angel"] {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  position: relative !important; /* Para que entren en la secuencia normal de la página */
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  margin: 20px auto !important;
-  max-width: 80% !important;
-  height: auto !important;
-}
+
+} /* <-- CIERRE DE LA REGLA MEDIA SCREEN */
