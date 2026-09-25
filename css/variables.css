@@ -58,7 +58,7 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   RESTAURACIÓN PERFECTA EN ESCRITORIO (PC)
+   1. RESTAURACIÓN PERFECTA EN ESCRITORIO (PC >= 769px)
    ========================================== */
 @media screen and (min-width: 769px) {
   .page-hero .angel-decor.decor-left {
@@ -79,15 +79,17 @@ p {
     margin: 0 !important;
   }
 
+  /* Tamaño grande y original de los ángeles para PC */
   .angel-img-full {
     display: inline-block !important;
-    max-width: 160px !important;
+    max-width: 280px !important; /* Devuelve el tamaño grande original */
+    width: auto !important;
     height: auto !important;
   }
 }
 
 /* ==========================================
-   AJUSTE RESPONSIVO EXCLUSIVO PARA MÓVIL (<= 768px)
+   2. AJUSTE RESPONSIVO EXCLUSIVO PARA MÓVIL (<= 768px)
    ========================================== */
 @media screen and (max-width: 768px) {
 
@@ -166,7 +168,7 @@ p {
     width: 100% !important;
   }
 
-  /* Forzar visibilidad y centrado de la foto de perfil */
+  /* Visibilidad y centrado de la foto de perfil en móvil */
   .profile-img, 
   .about-img, 
   .bio-img,
@@ -176,13 +178,13 @@ p {
     visibility: visible !important;
     opacity: 1 !important;
     width: 100% !important;
-    max-width: 220px !important;    /* Tamaño adecuado para pantallas táctiles */
+    max-width: 220px !important;
     height: auto !important;
     margin: 0 auto 20px auto !important;
-    border-radius: 500px !important;  /* Mantiene la forma arqueada u ovalada */
+    border-radius: 500px !important;
   }
 
-  /* Desplegar la cita/tarjeta de texto debajo del texto principal */
+  /* Cita/tarjeta de texto desplegada abajo en móvil */
   .about-content, 
   .bio-text, 
   blockquote, 
@@ -192,33 +194,8 @@ p {
     margin: 15px 0 !important;
   }
 
-  /* --- ÁNGELES DE PORTADA --- */
-  .page-hero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .angel-decor.decor-left {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    display: block !important;
-    margin: 10px auto !important;
-    text-align: center !important;
-    order: -1 !important;
-  }
-
-  .angel-decor.decor-left .angel-img-full {
-    display: block !important;
-    max-width: 90px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-
-  .angel-decor.decor-right {
+  /* Oculta los ángeles en móvil para evitar sobrecargar y descuadrar la pantalla */
+  .angel-decor, .decor-left, .decor-right {
     display: none !important;
   }
 }
