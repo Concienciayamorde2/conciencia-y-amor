@@ -113,6 +113,37 @@ p {
     padding: 0 !important;
   }
 
+  /* --- CORRECCIÓN DEL SUBMENÚ DESPLEGABLE DE SERVICIOS --- */
+  .dropdown-menu, 
+  nav ul li ul, 
+  .nav-links li ul, 
+  [class*="dropdown"] {
+    position: static !important;        /* Quita el flotado absoluto para integrarse en la columna */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-shadow: none !important;        /* Remueve la sombra superpuesta */
+    background: transparent !important;   /* Mantiene el fondo uniforme */
+    padding: 5px 0 !important;
+    margin: 5px 0 10px 0 !important;
+    transform: none !important;
+  }
+
+  .dropdown-menu li, 
+  nav ul li ul li {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 4px 0 !important;
+  }
+
+  .dropdown-menu a, 
+  nav ul li ul a {
+    font-size: 0.9rem !important;
+    color: #4A5D4E !important;          /* Color de texto acorde a la paleta */
+    display: block !important;
+  }
+
   /* Redimensionamiento de contenedores */
   .grid, .row, .container, .hero, .hero-section, 
   .about-section, .service-card, .service-item {
@@ -124,7 +155,7 @@ p {
     padding-right: 15px !important;
   }
 
-  /* --- MOSTRAR UN ÁNGEL CENTRADO EN CELULAR --- */
+  /* --- ÁNGELES DE PORTADA --- */
   .page-hero {
     display: flex !important;
     flex-direction: column !important;
@@ -140,7 +171,7 @@ p {
     display: block !important;
     margin: 10px auto !important;
     text-align: center !important;
-    order: -1 !important; /* Lo coloca arriba del título */
+    order: -1 !important;
   }
 
   .angel-decor.decor-left .angel-img-full {
@@ -150,7 +181,6 @@ p {
     margin: 0 auto !important;
   }
 
-  /* Oculta únicamente el segundo ángel para no recargar la pantalla */
   .angel-decor.decor-right {
     display: none !important;
   }
