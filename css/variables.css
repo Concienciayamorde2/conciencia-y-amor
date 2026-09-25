@@ -100,15 +100,15 @@ p {
     z-index: 5 !important;
   }
 
-  /* FORZAR LA ESCALA GIGANTE DE LAS IMÁGENES DE LOS ÁNGELES */
+  /* FORZAR LA ESCALA GIGANTE DE LAS IMÁGENES DE LOS ÁNGELES EN PC */
   .angel-img-full,
   .angel-decor img,
   .page-hero .angel-decor img {
     display: block !important;
     width: auto !important;
-    min-width: 380px !important;       /* Ancho mínimo grande */
-    max-width: 500px !important;       /* Ancho máximo para coincidir con la Imagen 1 */
-    height: 450px !important;          /* Altura fija grande */
+    min-width: 440px !important;       /* Aumentado para mayor presencia horizontal */
+    max-width: 580px !important;       /* Permite una escala superior sin recortes */
+    height: 520px !important;          /* Altura incrementada para lograr el efecto gigante */
     max-height: none !important;
     object-fit: contain !important;
   }
