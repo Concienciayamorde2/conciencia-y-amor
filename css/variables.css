@@ -155,6 +155,43 @@ p {
     padding-right: 15px !important;
   }
 
+  /* --- SECCIÓN SOBRE MÍ / HISTORIA Y FOTO DE PERFIL --- */
+  .about-section, 
+  .about-container, 
+  .bio-container,
+  [class*="about"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Forzar visibilidad y centrado de la foto de perfil */
+  .profile-img, 
+  .about-img, 
+  .bio-img,
+  .about-section img,
+  [class*="profile"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 220px !important;    /* Tamaño adecuado para pantallas táctiles */
+    height: auto !important;
+    margin: 0 auto 20px auto !important;
+    border-radius: 500px !important;  /* Mantiene la forma arqueada u ovalada */
+  }
+
+  /* Desplegar la cita/tarjeta de texto debajo del texto principal */
+  .about-content, 
+  .bio-text, 
+  blockquote, 
+  [class*="quote"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 15px 0 !important;
+  }
+
   /* --- ÁNGELES DE PORTADA --- */
   .page-hero {
     display: flex !important;
