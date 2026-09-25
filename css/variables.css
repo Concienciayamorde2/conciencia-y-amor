@@ -58,36 +58,43 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   1. RESTAURACIÓN PERFECTA EN ESCRITORIO (PC >= 769px)
+   RESTAURACIÓN TAMAÑO ORIGINAL EN ESCRITORIO (PC >= 769px)
    ========================================== */
 @media screen and (min-width: 769px) {
-  .page-hero .angel-decor.decor-left {
+
+  /* Ajuste de contenedores principales de los ángeles */
+  .page-hero .angel-decor.decor-left,
+  .angel-decor.decor-left {
     position: absolute !important;
     left: 40px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     display: block !important;
     margin: 0 !important;
+    width: auto !important;
   }
 
-  .page-hero .angel-decor.decor-right {
+  .page-hero .angel-decor.decor-right,
+  .angel-decor.decor-right {
     position: absolute !important;
     right: 40px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     display: block !important;
     margin: 0 !important;
+    width: auto !important;
   }
 
-  /* Tamaño grande y original de los ángeles para PC */
-  .angel-img-full {
+  /* FORZAR TAMAÑO GRANDE EN IMÁGENES (Afecta a la clase e imagen directa) */
+  .angel-img-full,
+  .angel-decor img,
+  .page-hero .angel-decor img {
     display: inline-block !important;
-    max-width: 280px !important; /* Devuelve el tamaño grande original */
-    width: auto !important;
+    width: 250px !important;       /* Tamaño forzado para recuperarlos grandes */
+    max-width: 250px !important;   /* Evita que cualquier otra regla los achique */
     height: auto !important;
   }
 }
-
 /* ==========================================
    2. AJUSTE RESPONSIVO EXCLUSIVO PARA MÓVIL (<= 768px)
    ========================================== */
