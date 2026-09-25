@@ -73,7 +73,7 @@ p {
   .angel-decor.decor-left {
     position: absolute !important;
     left: -15px !important;            /* Ligera salida hacia el borde izquierdo */
-    top: -25px !important;              /* Alinea la cabeza del ángel con el pill superior */
+    top: -30px !important;              /* Alinea la cabeza del ángel con el pill superior */
     bottom: auto !important;
     transform: none !important;
     display: block !important;
@@ -87,7 +87,7 @@ p {
   .angel-decor.decor-right {
     position: absolute !important;
     right: -15px !important;           /* Ligera salida hacia el borde derecho */
-    top: -25px !important;              /* Alinea la cabeza del ángel con el pill superior */
+    top: -30px !important;              /* Alinea la cabeza del ángel con el pill superior */
     bottom: auto !important;
     transform: none !important;
     display: block !important;
