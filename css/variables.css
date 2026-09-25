@@ -58,57 +58,53 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   RESTAURACIÓN EXACTA DE ÁNGELES GIGANTES EN PC (>= 769px)
+   ALINEACIÓN Y ESCALA EXACTA DE ÁNGELES (PC >= 769px)
    ========================================== */
 @media screen and (min-width: 769px) {
 
-  /* Permite que los ángeles sobresalgan verticalmente si es necesario */
   .page-hero, 
   .hero-section {
     position: relative !important;
     overflow: visible !important;
-    min-height: 480px !important;
   }
 
-  /* Posicionamiento y tamaño del ángel izquierdo */
+  /* Ángel Izquierdo: Alineado arriba desde la línea de "Acompañamiento y Sanación" */
   .page-hero .angel-decor.decor-left,
   .angel-decor.decor-left {
     position: absolute !important;
-    left: -20px !important;            /* Pegado al borde izquierdo como la Imagen 1 */
-    bottom: 0 !important;
-    top: auto !important;
+    left: -15px !important;            /* Ligera salida hacia el borde izquierdo */
+    top: 25px !important;              /* Alinea la cabeza del ángel con el pill superior */
+    bottom: auto !important;
     transform: none !important;
     display: block !important;
     margin: 0 !important;
     width: auto !important;
-    height: 95% !important;            /* Ocupa casi todo el alto de la tarjeta */
     z-index: 5 !important;
   }
 
-  /* Posicionamiento y tamaño del ángel derecho */
+  /* Ángel Derecho: Alineado arriba desde la línea de "Acompañamiento y Sanación" */
   .page-hero .angel-decor.decor-right,
   .angel-decor.decor-right {
     position: absolute !important;
-    right: -20px !important;           /* Pegado al borde derecho como la Imagen 1 */
-    bottom: 0 !important;
-    top: auto !important;
+    right: -15px !important;           /* Ligera salida hacia el borde derecho */
+    top: 25px !important;              /* Alinea la cabeza del ángel con el pill superior */
+    bottom: auto !important;
     transform: none !important;
     display: block !important;
     margin: 0 !important;
     width: auto !important;
-    height: 95% !important;            /* Ocupa casi todo el alto de la tarjeta */
     z-index: 5 !important;
   }
 
-  /* FORZAR LA ESCALA GIGANTE DE LAS IMÁGENES DE LOS ÁNGELES EN PC */
+  /* TAMAÑO EXTRA GRANDE (Alineado con Imagen 1) */
   .angel-img-full,
   .angel-decor img,
   .page-hero .angel-decor img {
     display: block !important;
     width: auto !important;
-    min-width: 440px !important;       /* Aumentado para mayor presencia horizontal */
-    max-width: 580px !important;       /* Permite una escala superior sin recortes */
-    height: 520px !important;          /* Altura incrementada para lograr el efecto gigante */
+    min-width: 480px !important;       /* Ancho imponente */
+    max-width: 650px !important;
+    height: 580px !important;          /* Altura para cubrir hasta la sección inferior */
     max-height: none !important;
     object-fit: contain !important;
   }
