@@ -58,41 +58,56 @@ p {
     opacity: 0.95; /* Asegura máxima nitidez en párrafos */
 }
 /* ==========================================
-   RESTAURACIÓN TAMAÑO ORIGINAL EN ESCRITORIO (PC >= 769px)
+   RESTAURACIÓN TAMAÑO IMPONENTE EN ESCRITORIO (PC >= 769px)
    ========================================== */
 @media screen and (min-width: 769px) {
 
-  /* Ajuste de contenedores principales de los ángeles */
+  /* Garantizar que el héroe no recorte las imágenes grandes */
+  .page-hero, .hero-section {
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  /* Contenedor izquierdo */
   .page-hero .angel-decor.decor-left,
   .angel-decor.decor-left {
     position: absolute !important;
-    left: 40px !important;
+    left: 20px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     display: block !important;
     margin: 0 !important;
     width: auto !important;
+    height: auto !important;
+    z-index: 10 !important;
   }
 
+  /* Contenedor derecho */
   .page-hero .angel-decor.decor-right,
   .angel-decor.decor-right {
     position: absolute !important;
-    right: 40px !important;
+    right: 20px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     display: block !important;
     margin: 0 !important;
     width: auto !important;
+    height: auto !important;
+    z-index: 10 !important;
   }
 
-  /* FORZAR TAMAÑO GRANDE EN IMÁGENES (Afecta a la clase e imagen directa) */
+  /* FORZAR TAMAÑO REAL Y PROPORCIONAL DE LAS IMÁGENES */
   .angel-img-full,
   .angel-decor img,
-  .page-hero .angel-decor img {
-    display: inline-block !important;
-    width: 250px !important;       /* Tamaño forzado para recuperarlos grandes */
-    max-width: 250px !important;   /* Evita que cualquier otra regla los achique */
+  .page-hero .angel-decor img,
+  .angel-decor svg {
+    display: block !important;
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 300px !important;
     height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
   }
 }
 /* ==========================================
