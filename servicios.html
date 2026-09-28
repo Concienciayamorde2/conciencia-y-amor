@@ -80,8 +80,7 @@
 
     <!-- === FIN DE LOS ÁNGELES === -->
 
-
-    <!-- Contenido principal centrado (Este bloque se mantiene igual) -->
+    <!-- Contenido principal centrado -->
     <div class="page-hero-content">
         <span class="hero-tag">Acompañamiento & Sanación</span>
         <h1 class="page-title">NUESTROS SERVICIOS</h1>
@@ -103,14 +102,7 @@
 </section>
 
 <!-- CATEGORÍA 1: BIENESTAR HOLÍSTICO PARA ADULTOS -->
-<section id="adultos" class="services-category-section">
-    <!-- VECTOR DECORATIVO DE FONDO (Izquierda) -->
-    <div class="bg-vector-decor left-decor decor-adultos">
-        <img src="assets/icons/adulto.png" alt="Bienestar Holístico para Adultos">
-    </div>
-    <div class="bg-vector-decor right-decor decor-adultos">
-        <img src="assets/icons/adulto.png" alt="Bienestar Holístico para Adultos">
-    </div>
+<section id="adultos" class="services-category-section sacred-geo-bg">
 
     <div class="section-header">
         <div class="loto-divider">
@@ -255,17 +247,24 @@
     </div>
 
     <!-- REPRODUCTOR/FEATURED PODCAST CARD -->
-    <div class="featured-podcast-card">
-        <div class="podcast-content">
-            <span class="service-badge-podcast">🎙️ Recomendado / Escucha Libre</span>
-            <h3>Podcast "Ondas de Ritmo y Vida"</h3>
-            <p>Episodios y reflexiones diseñadas para sembrar conciencia en el hogar, acompañar la crianza con amor y sanar desde la escucha consciente.</p>
-            <div class="podcast-links">
-                <a href="https://www.youtube.com/@psicoterapiaemocional" target="_blank" class="btn-podcast-yt"><i class="fa-brands fa-youtube"></i> Escuchar en YouTube</a>
-                <a href="https://wa.me/573232938758?text=Hola,%20deseo%20información%20sobre%20el%20Podcast" class="btn-card">Más Información</a>
-            </div>
+<div class="featured-podcast-card">
+    <div class="podcast-content">
+        <span class="service-badge-podcast">🎙️ Recomendado / Escucha Libre</span>
+        <h3>Podcast "Ondas de Ritmo y Vida"</h3>
+        <p>Episodios y reflexiones diseñadas para sembrar conciencia en el hogar, acompañar la crianza con amor y sanar desde la escucha consciente.</p>
+        <div class="podcast-links">
+            <a href="https://www.youtube.com/@psicoterapiaemocional" target="_blank" class="btn-podcast-yt"><i class="fa-brands fa-youtube"></i> Escuchar en YouTube</a>
+            
+            <!-- Botón de Reproducción de Adelanto -->
+            <button id="btn-play-teaser" class="btn-card btn-teaser" onclick="toggleAudio()">
+                <span id="play-icon">▶</span> Escuchar Adelanto (38s)
+            </button>
+
+            <!-- Archivo de Audio -->
+            <audio id="podcast-teaser-audio" src="audio/audio.mp3"></audio>
         </div>
     </div>
+</div>
     
     <!-- CONTENEDOR GRID: ABRE AQUÍ (SIN EL '</div>' AL FINAL) -->
     <div class="services-grid">
@@ -479,6 +478,31 @@
                 }, 2500);
             }
         });
+    }
+    /* --- FUNCIONES PARA EL REPRODUCTOR DE AUDIO DEL PODCAST --- */
+    function toggleAudio() {
+        var audio = document.getElementById("podcast-teaser-audio");
+        var icon = document.getElementById("play-icon");
+        var btn = document.getElementById("btn-play-teaser");
+
+        if (audio.paused) {
+            audio.play();
+            icon.textContent = "❚❚"; // Cambia a ícono de Pausa
+            btn.classList.add("playing");
+        } else {
+            audio.pause();
+            icon.textContent = "▶";  // Cambia a ícono de Play
+            btn.classList.remove("playing");
+        }
+    }
+
+    // Al finalizar el audio, resetea el botón
+    var podcastAudio = document.getElementById("podcast-teaser-audio");
+    if (podcastAudio) {
+        podcastAudio.onended = function() {
+            document.getElementById("play-icon").textContent = "▶";
+            document.getElementById("btn-play-teaser").classList.remove("playing");
+        };
     }
     </script>
 </body>
